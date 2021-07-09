@@ -1,0 +1,149 @@
+@font-face {
+  font-family: 'gost';
+  src: url('../font-awesome/fonts/GOST_A_.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* hauteur du carousel, remplacé par le logo */
+#bs-example-navbar-collapse-1
+{
+  background-color: #262626;
+}
+header.carousel {
+	height: 190px;
+
+}
+.first
+{
+  text-align: center;
+  margin-right: 50px;
+}
+.first ul li
+{
+    list-style-type:none;
+}
+.btn
+{
+  float: right;
+}
+.carousel-inner {
+	text-align: center;
+}
+
+.carousel-inner img {
+	padding: 50px;
+}
+
+.navbar {
+	background-color: #262626;
+}
+.navbar-inverse .navbar-brand,
+.navbar-inverse .navbar-nav li a,
+.navbar-inverse .navbar-nav > li > a:focus {
+	color: white;
+}
+
+/.navbar-inverse .navbar-nav > li > a:visited {
+	color: white;
+}
+
+.navbar-brand {
+	font-family: gost;
+	font-size: 2em;
+	padding: 10px;
+  letter-spacing: 5px;
+}
+
+.navbar-brand img {
+	display: inline;
+}
+
+.navbar-toggle {
+	background-color: black;
+}
+
+.navbar-inverse .navbar-nav li a:hover,
+.navbar-inverse .navbar-nav > li > a:hover
+.nav > li:hover {
+	background-color: black;
+	color: white;
+}
+
+h1 {
+	line-height: 1.5em;
+	font-family: gost;
+	text-align: center;
+	color: black;
+}
+
+p {
+	font-family: gost;
+	color: red;
+	font-size: em;
+}
+
+a.navbar-brand:hover {
+	color: black;
+}
+.col-md-4 .panelpanel-default .panel-heading
+{
+  background-color: #262626;
+
+}
+.panel-heading h4
+{
+  color: white;
+}
+/* voir le remote pour le pb d'image dans carousel plus responsive */
+.panel-body p
+{
+  color: black;
+}
+p
+{
+  color: #262626;
+  font-size: 1.15em;
+}
+a
+{
+  color: #262626;
+  font-weight: bold;
+}
+h2
+{
+  font-weight: bold;
+  font-family: gost;
+}
+img.img-prof {
+margin-left: 45%;
+margin-top: 5%;
+}
+.row {
+  text-align: justify;
+}
+.courcroquis
+{
+float: right;
+text-align: center;
+}
+.courcroquis2
+{
+float: right;
+text-align: center;
+margin-top: -25%;
+
+}
+.thumbnail
+{
+  border: none;
+}
+.prof2
+{
+  text-align: justify;
+}
+img.img-prof2 {
+margin-left: -68%;
+margin-top: 5%;
+margin-right: 0;
+}

@@ -1,0 +1,84 @@
+body, html {
+	border: 0;
+	padding: 0;
+	margin:  0;
+
+	background-color: PaleGreen;
+	overflow: auto;
+}
+
+section {
+	margin: auto;
+	width: 1200px;
+	background-color:white;
+}
+
+header {
+	border: 0;
+	padding: 0;
+}
+
+article {
+	float: left;
+	text-align: justify;
+	width: 850px;
+	padding-left: 25px;
+}
+article h1 {
+	margin: 10px;
+}
+article p::before {
+	content: "";
+	padding-left: 50px;
+}
+header nav {
+	text-align: center;
+	font-family: arial, Helvetica, sans-serif;
+	padding-bottom: 20px;
+}
+header nav ul {
+	display: inline;
+}
+header nav ul li {
+	display: inline;
+	padding: 10px;
+}
+header nav ul li a {
+	text-decoration: none;
+}
+header nav ul li a:hover {
+	text-decoration: underline;
+}
+footer {
+	clear: both;
+	text-align: center;
+	padding: 10px;
+}
+aside {
+	float: right;
+	border: 1px solid purple;
+	margin-right: 10px;
+	margin-top: 20px;
+	width: 150px;
+}
+aside hgroup {
+	text-align: center;
+	color: purple;
+}
+aside hgroup a {
+	text-decoration: none;
+}
+menu {
+	float: left;
+	width: 100px;
+	background-color: grey;
+}
+menu p {
+	list-style-type: none;
+	padding: 5px;
+}
+menu a {
+	font-family: arial, Helvetica, sans-serif;
+	text-decoration: none;
+	color: white;
+}

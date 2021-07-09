@@ -1,0 +1,116 @@
+:not(h1):not(a):not(a:link):not(a:visited) {
+	float: left;
+}
+
+/* les variables standard */
+@body-bg-color: palegreen;		// vert clair
+@text-color: white;
+@titre: grey;
+@bouton-bg-color: HotPink;
+@couleur_pastille: DarkOrange;
+
+// les variables mixées
+// mixin
+.ma_variable() {
+	border-radius: 50%;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	-ms-border-radius: 50%;
+}
+.ma_variable_arrondie() {
+	border-radius: 20%;
+	-webkit-border-radius: 20%;
+	-moz-border-radius: 20%;
+	-ms-border-radius: 20%;
+}
+
+// héritage et pseudo-classe extends
+.debut {
+	width: 150px;
+	height: 150px;
+	background-color: red;
+}
+.fin {
+	&:extend(.debut);
+	background: yellow;
+}
+
+// Variante avec extends
+#rond {
+	border-radius: 50%;
+	width: 50px;
+	height: 50px;
+	background-color: red;
+}
+
+#ovale:extend(#rond) {
+	height: 100px;
+}
+
+// variante de variables
+#bordure_style(@epaisseur: 3px, @couleur: red, @radius: 20px, @style: solid) {
+	border: @epaisseur @style @couleur;
+	border-radius: @radius;
+	-webkit-border-radius: @radius;
+	-moz-border-radius: @radius;
+	-ms-border-radius: @radius;
+	width: 100px;
+	height: 100px;
+	background-color: yellow;
+}
+
+/* Et le LESS CSS */
+body {
+	background: @body-bg-color;
+	color: @text-color;
+	font-family: sans-serif;
+	text-align: center;
+}
+
+body h1 {
+	color: @titre;
+}
+
+a:link, a:visited {
+	background: @bouton-bg-color;
+	color: @text-color;
+	display: inline-block;
+	padding: 10px 10px;
+	margin-bottom: 5px;
+}
+
+a:hover {
+	background-color: desaturate(@bouton-bg-color, 50%);
+}
+
+a:active {
+	background-color: saturate(@bouton-bg-color, 100%);
+}
+
+a {
+	display: block;
+}
+
+// imbrication standard
+#style1 {
+	font-family: arial;
+	#style2 {
+		font-weight: bold;
+	}
+}
+
+// utilisation de variable mixin
+#bordure {
+	.ma_variable;
+	width: 150px;
+	height: 150px;
+	background-color: @titre;
+}
+
+#bordure_small {
+	.ma_variable_arrondie;
+	background-color: @couleur_pastille;
+	width: 100px;
+	height: 100px;
+}
+

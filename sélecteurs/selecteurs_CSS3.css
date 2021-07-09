@@ -1,0 +1,117 @@
+/* l'astérisque cible tous les éléments HTML de la page */
+/* pratique mais assez lourd pour un client */ 
+* {
+	margin: 0px;
+	border: 0px;
+	padding: 0px;
+}
+
+/* On peut utiliser l'étoile pour cibler les enfants d'un élément */
+/* Technique bonne à savoir mais peu utilisable */
+/* le diez symbolise l'identifiant unique, id, de l'élément */
+div#container * {
+	border: 5px solid black;
+	width: 200px;
+	height: 100px;
+}
+#container, content {
+	width: 500px;
+	color: red;
+	margin: auto;
+}
+
+/* Le point symbolise la classe (class), utilisable plusieurs fois et sur plusieurs éléments dans la page HTML */
+div.classe  {
+	margin-left: 20px;
+}
+
+/* Sélecteur dit descendant, qui spécifie un élément dans une liste */
+li a {
+	text-decoration: underline;
+}
+
+/* On cible les types d'éléments en fonction de leur balise correspondante */
+div, a, ul, li, ol, u {
+	padding-left: 20px;
+	color: purple;
+}
+
+/* Sélecteur adjacent, ne cible que l'élément paragraphe d'une liste */
+ul + p {
+	color: red;
+}
+/* Variante de l'adjacent, le tilde (AlTGR+2) (ALT + N sur mac), sélectionne tous les éléments d'une liste */
+ul ~ li {
+	text-align: justify;
+	color: orange;
+}
+
+
+
+
+
+
+
+/* Sélecteur d'enfants directs, ou combinateur */
+/* Ne cible ici que les listes du div content */
+div#content > ul {
+	border: 2px dotted blue;
+}
+nav > ul  > li {
+	...
+}
+
+/* Sélecteur d'attribut d'élément, ne ciblera ici que les ancres des title */
+a[title] {
+	font-size: 18px;
+}
+
+
+
+/* Cible les ancres/liens (a=anchor) qui contiennent l'URL du bon coin */
+a[href="http://leboncoin.fr"] {
+	color: red;
+	font-weight: bold;
+}
+/* Variante : tous les liens contenant leboncoin seront colorés */
+a[href*="leboncoin"] {
+	color: red;
+}
+
+
+/* Le caret ou circonflexe ^ : affiche une icône pour les liens externes commençant par http ou autre */
+a[href^="http"],
+a[href^="https://"] {
+	 background: url(img/icon.png) no-repeat;
+	 padding-left: 10px;
+}
+/* Variante avec les symboles dollar $ pour les images */
+a[href$=".jpg"],
+a[href$=".gif"],
+a[href$=".png"] {
+	color: red;
+}
+/* Variante avec les types de données */
+a[data-filetype="image"],
+a[data-filetype="video"] {
+	 color: red;
+	 border: 3px solid blue;
+}
+/* Variante avec la tilde, colore les éléments qui contiennent un espace */
+a[data-info~="external"] {
+	color: purple;
+}
+a[data-info="image"] {
+	border: 3px dotted grey;
+}
+
+/* Pour les input de formulaire */
+input[type=radio]:checked {
+	border: 1px solid black;
+}
+input[type=checkbox]{
+	...
+}
+input[type=textarea]{
+	...
+}

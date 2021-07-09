@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="FR-fr">
+<head>
+<!--	<meta charset="ISO-8859-1"> -->
+	<meta charset="utf-8" />
+	<meta name="description" content="La page de contact du site" />
+	<meta name="keywords" content="mot clef,mot clef" />
+	<meta name="title" content="page de contact du site" />
+	<link href="../img/favicon.png" rel="shortcut icon" type="image/png">
+	<link href="../css/style.css" rel="stylesheet" type="text/css">
+	<link href="../css/formulaire.css" rel="stylesheet" type="text/css">
+	<title>Titre de ma page contact</title>
+</head>
+<body>
+	<section>
+		<header>
+			<a href="../index.html"><img src="../img/logo_UBB.jpg" alt="logal" /></a>
+			<nav>
+				<ul>
+					<li><a href="../index.html" target="_self">Accueil</a></li>
+					<li><a href="contact.html" target="_self">Contact</a></li>
+					<li><a href="news.html" target="_self">News</a></li>
+					<li><a href="medias.html" target="_self">Medias</a></li>
+				</ul>
+				<form method="GET" action="http://google.com/search">
+					<input type="search" name="q" placeholder="Effectuez votre recherche">
+					<input type="submit" value="go">
+					<input type="reset" value="effacer">
+				</form>
+			</nav>
+		</header>
+		<menu>
+			<p><a href="../index.html" target="_self">Accueil</a></p>
+			<p><a href="contact.html" target="_self">Contact</a></p>
+			<p><a href="news.html" target="_self">News</a></p>
+			<p><a href="medias.html" target="_self">Medias</a></p>
+		</menu>
+
+		<article>
+			<h1>Contactez nous</h1>
+			<fieldset>
+				<legend>Formulaire</legend>
+				<!-- <form action="reception.php" method="POST"> -->
+				<form>
+					<p>
+						<label for="nom">Nom:</label>
+						<input type="text" name="nom" id="nom" >
+
+						<label for="prenom">Prénom:</label>
+						<input type="text" name="prenom" id="prenom" >
+					</p><p>
+						<label for="mail">E-mail:</label>
+						<input type="mail" name="email" id="email">
+
+						<label for="phone">Téléphone:</label>
+						<input type="tel" name="phone" id="phone" required pattern="[0-9]{10}" title="10 chiffres sans espace">
+					</p><p>
+						<label for="site">Site:</label>
+						<input type="URL" name="site" id="site" >
+					</p>
+					<label for="place">Emplacement:</label>
+					<select id="place" name="place">
+						<option id="gradins">Gradins</option>
+						<option id="virage">Virage</option>
+						<option id="tribunes">Tribunes</option>
+						<option id="presidentielles">Présidentielles</option>
+					</select>
+					<p>
+						<label for="like">Vous nous aimez:</label>
+						<input type="radio" name="unpeu" value="unpeu">Un peu</input>
+						<input type="radio" name="beaucoup" value="beaucoup">Beaucoup</input>
+						<input type="radio" name="passionnement" value="passionnement">Passionnément</input>
+						<input type="radio" name="pasdutout" value="pasdutout">Pas du tout</input>
+					</p><p>
+						<label for="choix">Niveau de placage:</label>
+						<input type="checkbox" name="bas" id="plaque" value="bas"> Bas </input>
+						<input type="checkbox" name="haut" id="plaque" value="haut"> Haut </input>
+						<input type="checkbox" name="none" id="plaque" value="bas"> Je ne plaque pas </input>
+					</p><p>
+						<label for="texte"></label>
+						<textarea rows="15" cols="60" placeholder="Saisir votre texte ici"></textarea>
+					</p><p>
+						<input type="submit">
+						<input type="reset">
+					</p>
+
+				</form>
+
+			</fieldset>
+		</article>
+		<aside>
+			<hgroup>
+				<h3><a href="../#">Pub 1</a></h3>
+				<h4><a href="../#">Pub 2</a></h4>
+			</hgroup>
+		</aside>
+		<footer>Mentions légales | &copy; 2017 | CESI</footer>
+	</section>
+</body>
+</html>

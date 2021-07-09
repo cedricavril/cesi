@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="FR-fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="description" content="liste déroulante">
+    <meta name="author" content="pas moi">
+    <meta charset="utf-8">
+    <title>TP</title>
+    <link rel="stylesheet" type="text/css" href="style_departements.css">
+  </head>
+  <body>
+    <header>
+      <select id="departements" onchange="synchVilles(this.value);">
+        <option></option>
+        <option></option>
+        <option></option>
+      </select>
+
+      <select id="villes">
+        <option></option>
+        <option></option>
+        <option></option>
+      </select>
+    </header>
+
+    <script>
+
+// initialisation et hydratation
+
+// remplissage de la liste des départements à cliquer
+var departements = Array('Gironde', 'Île de France', 'Morbihan');
+for(var i=0; i<departements.length; i++) 
+  document.getElementById('departements').options[i].innerHTML = departements[i];
+
+// hydratation du tableau des villes selon les départements : tableau de tableaux
+var departementsVilles = new Array(
+  Array('Bordeaux','Pessac','Bègles'),
+  Array('Paris 1', 'Paris 2', 'Paris 3'),
+  Array('Bretagne', 'Zoo', 'Asile'),
+);
+
+var synchVilles = function(departement){
+  // récupération de l'index du tableau en fonction du nom de département choisi par l'utilisateur Cf. this.value dans le html
+  indexChoisi = departements.indexOf(departement);
+
+  //remplissage de la liste des villes du département choisi - on suppose que le nombre de ville est le même pour chaque département
+  for(var j=0; j<departementsVilles[indexChoisi].length; j++) 
+    document.getElementById('villes').options[j].innerHTML = departementsVilles[indexChoisi][j];
+}
+
+    </script>
+  </body>
+</html>

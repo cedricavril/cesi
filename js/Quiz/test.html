@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Tests JavaScript</title>
+<meta charset="utf-8">
+<meta name="description" content="mes premiers scripts en JS">
+<link rel="stylesheet" href="style.css" type="text/css">
+<script>
+	var a = 4;   // nombre de questions que l'on stockera dans un tableau
+	var somme = 0;
+	
+	function effacer(form)   // efface toutes les réponses du formulaire
+	{
+		for (var i = 1; i < a; i++) form[i].value = ''; // la boucle for exécute l'expression (var i = 1;...) puis l'instruction form[i].value... tant que l'utilisateur efface le formulaire
+	}
+	
+	res = new Array(a) // on stocke les données dans notre tableau
+	function score(form)  // corrige chaque réponse et compte le nombre de réponses justes
+	{
+		var somme = 0;
+		if (form[1].value == 4) {somme++};
+		if (form[1].value == 4) {res[1] = 'Juste'} else {res[1]='<font color=#ff0000>Faux</font>'};
+		if (form[2].value == 2) {somme++};	
+		if (form[2].value == 2) {res[2] = 'Juste'} else {res[2]='<font color=#ff0000>Faux</font>'};
+		if (form[3].value == 3) {somme++};	
+		if (form[3].value == 3) {res[3] = 'Juste'} else {res[3]='<font color=#ff0000>Faux</font>'};
+		if (form[4].value == 1) {somme++};	
+		if (form[4].value == 1) {res[4] = 'Juste'} else {res[4]='<font color=#ff0000>Faux</font>'};
+		return somme;
+	}
+
+	function verif(form) // Cette fonction vérifie que toutes les réponses ont été données. Si ce n'est pas le cas, elle retourne la valeur "false" qui sera traitée par la fonction "process" (voir ci-dessous).
+	{
+		i = 1;
+		while ((i < a) && (form[i].value != '')) {i++};
+		return ((i == a) && (form[a].value != ''));
+	}
+	
+	function corriger(form) // Cette fonction lance la correction et calcule la note. La variable "myResult" contiendra tout le texte de la page de correction.
+	{
+		var j = 1;
+		var somme = 0;
+		var comments = '<p>';
+		var myResult = '<html><head><title>Quiz de culture G</title><body bgcolor=#ffbb00><h2>Corrections</h2>';
+		somme = score(form);
+		comments = avis(form);
+		
+		while (res[j] != null)
+		{
+			myResult = myResult+ ' Question ' +j+ ' : ' +res[j]+ '<p>';
+            j++;
+        }
+		
+		myResult = myResult+ '<p>Votre score est de : ' +somme+ '/' +a;
+		myResult = myResult+ '<p>Votre moyenne est de : ' +(0+4*somme/a);
+		myResult = myResult+ '<p>Notre avis : ' + comments;
+		myResult = myResult+ '</head></body></html>'
+
+		return(myResult)
+	}
+
+	function avis(form)
+	{
+		var comments = '<p>';
+		if((somme <= 1)||(somme <= 2))
+		{
+			comments += 'Votre score est de : ' +somme+ 'C Nul !';
+		}
+		else
+		{
+			comments += 'Pas mal !';
+		}
+		return(comments + '</p>')
+	}
+
+	function ouvrir(form)   // ouvre la fenêtre du corrigé et la note obtenue
+	{
+		var hauteur = 400;  // hauteur de la fenêtre (en pixels)
+		var largeur = 350;  // largeur de la fenêtre (en pixels)
+		
+		var options = 'toolbar=no,location=no,directories=no,status=no,'
+		+ 'menubar=no,scrollbars=no,resizable=no,copyhistory=yes,'
+		+ 'width=' + largeur + ',height=' + hauteur;
+		
+		maFenetre = window.open(' ',' Quiz ',options);
+		maFenetre.document.open();
+		
+		corps = corriger(form);
+		maFenetre.document.write(corps);
+
+		/*note = avis(form);
+		maFenetre.document.write(note);*/
+	}
+	
+	function process(form)    // C'est la fonction principale, celle qui lance la correction si le formulaire est complet. S'il manque des réponses, elle affiche un message d'alerte.
+	{
+		if (verif(form)) {ouvrir(form)}
+		else {alert('Formulaire incomplet !!')}
+	}
+	
+</script>
+</head>
+
+<body>
+	
+	<section id="global">
+		<h1>Petit quiz de culture G</h1>
+		
+			<form name="test_form">
+				<div id="gauche">
+				<b>Question 1</b>
+				
+					<p>Quel est le nom de la créature dans "Dracula" ?</p>
+					<p><input type="radio" value="" name="Choix1" onclick = "this.form[1].value=1">Iron Man</p>
+				
+					<p><input type="radio" value="" name="Choix1" onclick = "this.form[1].value">Frankenstein</p>
+					
+					<p><INPUT TYPE = "radio" VALUE = "" NAME="Choix1" onclick = "this.form[1].value=3">Thor</p>
+					
+					<p><input type="radio" value="" name="Choix1" onclick = "this.form[1].value=4">Dracula</p>
+				</div>
+				
+				<div id="droite">
+					<b>Question 2</b>
+					
+						<p>Qui est le président actuel des Etats-Unis ?</p>
+						<p><input type="radio" value="" name="Choix2" onclick="this.form[2].value=1">Kim Jong-il</p>
+							
+						<p><input type="radio" value="" name="Choix2" onclick="this.form[2].value=2">Donald Trump</p>
+			
+						<p><input type="radio" value="" name="Choix2" onclick="this.form[2].value=3">Angela Merkel</p>
+           
+						<p><input type="radio" value="" name="Choix2" onclick="this.form[2].value=4">Vladimir Poutine</p>
+				</div>
+				
+				<div id="bas">
+					<div id="gauche_bas">
+						<b>Question 3</b>
+					
+							<p>Qui a réalisé "Jurassic Park" et "E.T." ?</p>
+							<p><input type="radio" value="" name="Choix3" onclick="this.form[3].value=1">Ma grand-mère</p>
+
+							<p><input type="radio" value="" name="Choix3" onclick="this.form[3].value=2">Zinedine Zidane</p>
+			
+							<p><input type="radio" value="" NAME="Choix3" onclick="this.form[3].value=3">Steven Spielberg</p>
+							
+							<p><input type="radio" value="" name="Choix3" onclick="this.form[3].value=4">Nicolas Sarkozy</p>
+					</div>			
+
+					<div id="droite_bas">
+						<b>Question 4</b>
+						
+						<p>Quelle est la capitale de la France ?</p>
+						<p><input type="radio" value="" name="Choix4" onclick="this.form[4].value=1">Paris</p>
+						
+						<p><input type="radio" value="" name="Choix4" onclick="this.form[4].value=2">Venise</p>
+						
+						<p><input type="radio" value="" name="Choix4" onclick="this.form[4].value=3">Londres</p>
+						
+						<p><input type="radio" value="" name="Choix4" onclick="this.form[4].value=4">Los Angeles</p>  
+					</div>
+				</div>
+				
+			<div class="bas">
+				<p>
+					<input type="button" name="Corriger" value="Résultats" onclick="process(this.form)">
+					<input type="reset" name="Effacer" value="Effacer" onclick="effacer(this.form)">
+				</p>
+		</form>
+	</div>
+	</section>
+	
+</body>
+</html>

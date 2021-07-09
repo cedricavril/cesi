@@ -1,0 +1,40 @@
+body, html {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+}
+
+header {
+	flex: 1;
+	background-color: black;
+}
+
+section {
+	display: block; /* pour IE */
+	display: flex;
+	flex: 1 1 auto;
+	flex-direction: row;
+}
+
+nav {
+	flex: 0.2;
+	background-color: orange;
+}
+
+article {
+	display: block;
+	flex: 1;
+	background-color: palegreen;
+}
+
+aside {
+	display: block;
+	flex: 0.2;
+	background-color: Peru;
+}
+
+footer {
+	flex: 1;
+	background-color: HotPink;
+	text-align: center;
+}

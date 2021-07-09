@@ -1,0 +1,32 @@
+<html>
+<head>
+<title>choix de table de multiplication</title>
+<meta charset="utf-8">
+<script>
+function verifReponse(nombreSaisi) {
+	if (nombreSaisi < 2 || nombreSaisi > 9) alert('le nombre doit être compris entre 2 et 9');
+
+	else for(i=0;i<=10;i++) document.write(nombreSaisi, " * ", i, " = ", nombreSaisi*i, "<br/>");
+
+	affichageTables();
+}
+
+function affichageTables() {
+	document.write("<center>");
+	for(j=2; j<=9; j++) {
+		document.write("*** <br/>")
+		for(i=0; i<=10; i++)
+			document.write(j, " * ", i, " = ", j*i, "<br/>");
+	}
+	document.write("</center>");
+}
+</script>
+</head>
+
+<body>
+	<form>
+		<input type="text" name="nombre">
+		<input type="button" onclick="verifReponse(nombre.value);">
+	</form>
+</body>
+</html>

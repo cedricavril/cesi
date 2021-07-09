@@ -1,0 +1,284 @@
+@page{
+    size: 100%;
+    margin: 0mm 5mm 0mm 5mm; // empêche l'affichage du titre, numéro de page, etc.
+}
+
+@font-face {
+    font-family: 'segoe UI';
+    src: url('font/segoeui.ttf') format('truetype');
+}
+
+html {
+    background: white;
+    color: black;
+    font: 14px "Segoe UI",Arial,sans-serif;
+    margin: 0;
+    padding: 0;
+}
+body {
+    margin: auto;
+    margin-top: 20px;
+    width: 230mm;
+    height: 297mm;
+}
+
+h1, h3 {
+    letter-spacing: 0.1em;
+    margin-top: 10px;
+    margin-bottom: 0;
+}
+
+h4 {
+    margin-bottom: 0;
+}
+section {
+    clear: both;
+    margin-top: 1.5em;
+    border-top: 2px solid #2E8B57;
+}
+li {
+    list-style-type: disc;
+}
+
+header .sousdiv h4 {
+    padding: 0;
+    margin: 0;
+    width: 33%;
+    display: inline-block;
+}
+header .sousdiv {
+    display: block;
+    width: 100%;
+    margin-top: 2em;
+    text-align: center;
+}
+
+header .sousdiv ul#header-left {
+    float: left;
+}
+
+header .sousdiv ul#header-right {
+    float: right;
+}
+
+header .sousdiv ul#header-left,
+header .sousdiv ul#header-right,
+header .sousdiv ul#header-center {
+    display: inline-block;
+    text-align: left;
+}
+
+section > ul > li,
+header > ul > li, 
+header .sousdiv ul#header-left > li,
+header .sousdiv ul#header-center > li,
+header .sousdiv ul#header-right > li {
+    list-style-type: none;
+    margin-bottom: .5em;
+}
+
+header .sousdiv ul#header-left > li,
+header .sousdiv ul#header-center > li,
+header .sousdiv ul#header-right > li {
+    margin: 0;
+}
+
+.headline-name {
+    border-bottom: 1px solid black;
+    padding-bottom: .5em;
+}
+.contact-column {
+    float: left;
+    padding: 0 1px;
+}
+a,
+a:link,
+a:visited {
+    border-bottom: 1px dotted rgb(0, 120, 180);
+    color: rgb(0, 120, 180);
+    padding: .2em .1em;
+    text-decoration: none;
+}
+a:focus,
+a:hover,
+a:active {
+    background-color: rgb(255, 245, 0);
+    border-bottom: 1px solid rgb(0, 120, 180);
+    color: rgb(0, 120, 180);
+}
+@media (min-width: 992px) {
+    .contact-column {
+        margin-left: 1em;
+    }
+    .contact-column.right {
+        float: right;
+    }
+}
+
+header #title {
+    float: left;
+    height: 6em;
+}
+header #title h2 {
+    font-weight: normal;
+    color: grey;
+    line-height: 0;
+    font-size: 1.2em;
+    margin: 0;
+    color: #2E8B57;
+}
+
+header #title h1 {
+    padding: 0;
+    margin: 0;
+    font-size: 2.5em;
+}
+
+header hr {
+    border-top: 5px solid black;
+    width: 6em;
+    clear: left;
+    float: left;
+    margin: 0;
+    padding: 0;
+}
+
+header img {
+    float: right;
+    width: 150px;
+}
+
+header ul {
+    margin: 0;
+    padding: 0;
+}
+
+header .sousdiv {
+    display: inline-block;
+    clear: both;
+    width: calc(100% - 170px);
+    margin-top: 10px;
+}
+
+header .sousdiv ul {
+    width: 30%;
+    white-space: nowrap;
+}
+
+header .sousdiv ul#header-left {
+    display: inline-block;
+}
+
+header .sousdiv ul#header-right {
+    text-align: right;
+    width: 270px;
+}
+
+header .sousdiv ul#header-center {
+    text-align: center;
+}
+
+header .sousdiv ul#header-right li img {
+    width: 15px;
+    padding-left: 4px;
+    float: none;
+}
+
+section .blocElementSection .barreVerticale{
+    //border-right: 4px solid #2E8B57;
+    height: 500px;
+    margin-top: 10px;
+    float: left;
+}
+
+section .blocElementSection p.titreFormation {
+    float: left;
+    width: 200px;
+    padding: 0;
+    margin: 0;
+}
+
+section .blocElementSection p.titreFormation strong {
+}
+
+section.education {
+    display: block;
+    margin-top: 30px;
+    float: left;
+}
+
+section#experience .skills img {
+    margin-left: 20px;
+    width: 70px;
+}
+section .blocElementSection p.titreFormation img {
+    position: absolute;
+    width: 80px;
+
+    margin-left: 40px;
+    margin-top: -10px;
+}
+
+
+section .blocElementSection .contenuFormation {
+    width: 660px;
+    margin-top: -20px;
+    margin-left: -13px;
+    margin-bottom: -6px;
+    float: left;
+    border-left: 2px solid #2E8B57;
+    margin-top: 15px;
+    padding-left: 20px;
+    padding-bottom: 20px;
+//    padding-bottom: 30px;
+    /*min-height: 40px;*/
+}
+
+section .blocElementSection {
+    font-size: 12px;
+    clear: both;
+    line-height: 13px;
+}
+
+.discNoir {
+    border-radius: 50%;
+//    background-color: #095228;
+    background-color: black;
+    width: 10px;
+    height: 10px;
+    float: left;
+    margin-left: -17px;
+    margin-top: 5px;
+}
+
+.discVert {
+    border-radius: 50%;
+    background-color: #095228;
+    width: 2px;
+    height: 2px;
+
+    margin-left: -10px;
+    margin-top: 6px;
+    float: left;
+    position: absolute;
+}
+
+section .blocElementSection .contenuFormation .alignementAvecDisc img {
+    padding-top: 10px;
+}
+
+section .blocElementSection .contenuFormation .alignementAvecDisc {
+    display: block; 
+    margin-top: -15px;
+}
+
+.skills {
+    position: absolute;
+    text-align: center;
+    margin-top: 40px;
+}
+
+.paragraphe {
+    display: block;
+    margin-left: 40px;
+}

@@ -1,0 +1,73 @@
+body, html {
+	padding: 50px;
+	border: 0;
+	margin: 0;
+	background-color: aquamarine;
+	color: black;
+	text-align: center;
+}
+
+header {
+	background-color: violet;
+	padding: 10px;
+	flex: 1;
+}
+
+section {
+	width: 80%;
+	margin: auto;
+}
+
+
+/*selecteur {
+	display: flex;
+	flex-direction: row, column, row-reverse, column-reverse;
+	flex-wrap: nowrap, wrap, wrap-reverse;
+	flex-flow: row nowrap direction + wrap
+	justify-content: space-around, space-between, flex-start, flex-end;
+	align-items: center;
+	flex: 1,2,3 ... auto; 1 pour utiliser tout l'espace dispo. auto pour centrer.
+	flex-shrink ou grow : rétrécissement ou agrandissement de la largeur dispo;
+	flex-basis : largeur min ou/et max du support utilisée, auto, [1, 1] -> largeur et hauteur;
+}*/
+
+ul {
+	padding: 5px;
+	list-style: none;
+	display: flex;
+	justify-content: space-around;
+	justify-content: space-between; /* pour ensuite ajuster l'espace entre les éléments avec flex-grow pour ul li */
+	flex-direction: row;
+	flex-wrap: wrap;
+	flex: 1;
+}
+
+ul li {
+	padding: 10px;
+	flex-grow: 0.1;
+	background-color: red;
+}
+
+article fieldset {
+	border: 1px solid black;
+}
+
+article fieldset legend {
+	color: black;
+}
+
+label input {
+	width: 400px;
+}
+
+label {
+	padding: 20px;
+}
+
+form {
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	align-items: center;
+	justify-content: space-around;
+}

@@ -1,0 +1,185 @@
+/* header #photo {
+	width: 200px;
+}
+
+menu {
+	float: left;
+	height: 200px;
+	width: 200px;
+	background-color: blue;
+}
+menu p {
+	font-family: arial, Helvetica, sans-serif;
+}
+menu a {
+	font-family: arial, Helvetica, sans-serif;
+	text-decoration: none;
+	color: white;
+}
+
+section {
+	margin: auto;
+	margin-top: 25px;
+	width: 1500px;
+	background-color:white;
+}
+
+menu p a {
+	background-size: cover;
+	background-image: none;
+}
+
+menu p a:hover {
+	background-image: url(../img/puce.jpg);
+}
+
+hr {
+	border: 0;
+	height: 12px;
+	width: 100%;
+	background-image: url(../img/separateur.png);
+}
+
+aside {
+	float: right;
+	border: 1px solid purple;
+	width: 200px;
+}
+aside hgroup {
+	text-align: center;
+	color: purple;
+	height: 200px;
+}
+aside hgroup a {
+	text-decoration: none;
+}
+
+body, html {
+	border: 0;
+	padding: 0;
+	margin:  0;
+
+	background-color: PaleGreen;
+	overflow: auto;
+}
+
+
+header {
+	border: 0;
+	padding: 0;
+}
+
+article p {
+	font-family: arial, Helvetica, sans-serif;	
+	height: 20px;
+}
+article p::before {
+	content: url("../img/puce.jpg");
+}
+article p img {
+	width: 20px;
+}
+article {
+	float: left;
+	width: 1000px;
+	padding-top: 50px;
+}
+article h1 {
+	padding: 20px;
+	margin: 10px;
+	font-size: 2em;
+}
+article h1, article h2 {
+	font-family: arial, Helvetica, sans-serif;	
+}
+footer {
+	clear: both;
+	text-align: center;
+	padding: 10px;
+}
+
+#phone {
+	display: block;
+	padding-top: 1em;
+	padding-bottom: 0;
+	font-size: 2em;
+}
+
+
+
+header nav {
+	text-align: center;
+	font-family: arial, Helvetica, sans-serif;
+	padding-bottom: 20px;
+}
+header nav ul {
+}
+header nav ul li {
+	display: inline;
+	padding: 10px;
+}
+header nav ul li a {
+	text-decoration: none;
+}
+header nav ul li a:hover {
+	text-decoration: underline;
+}
+*/
+
+@theme_color:blue;
+.degrade(@couleur_depart, @couleur_arrive) {
+	background-image: -moz-linear-gradient(top, @couleur_depart, @couleur_arrive);
+	background-image: linear-gradient(to bottom, @couleur_depart, @couleur_arrive);
+	background-image: -webkit-linear-gradient(@couleur_depart, @couleur_arrive);
+	background-repeat: no-repeat;
+	background-color: @couleur_arrive;
+
+//	font: 70%/1.5em Verdana, Tahoma, arial, sans-serif;
+	color: black;
+	text-align: center;
+}
+
+// faire une anim de couleur inversée en fonction de couleur du body sur chaque lien
+@keyframes fading {
+	0% {
+		height: 2000px;
+		.degrade(#000000, #40BB51);
+	} 50% {
+		height: 100px;
+		.degrade(#000000, #40BB51);
+	} 100% {
+		height: 800px;
+		.degrade(#000000, #40BB51);
+	}
+}
+
+section {
+	margin: auto;
+	width: 80%;
+	header {
+		nav {
+			text-align: center;
+			font-family: arial, Helvetica, sans-serif;
+			padding-bottom: 20px;
+			ul {
+				li {
+					display: inline;
+					padding: 10px;
+					a {
+						text-decoration: none;
+					}
+					a:hover {
+						text-decoration: underline;
+					}
+				}
+			}
+		}
+	}
+}
+
+body {
+	animation-name: fading;
+	animation-timing-function: ease-in-out (cubic-bezier(0.500, -0.600, 0.520, 1.650));
+	animation-duration: 2s;
+	.degrade(#000000, #40BB51);
+}

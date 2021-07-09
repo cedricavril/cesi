@@ -1,0 +1,22 @@
+article form {
+	border: 0;
+}
+article form p {
+	text-align: left;
+	font-family: arial;
+}
+input:focus:valid {
+	outline: 2 px orange solid;
+}
+
+input:focus:invalid {
+	outline: 2 px red solid;
+}
+
+input:required {
+	outline: 2 px blue solid;
+}
+
+input {
+	padding: 5px;
+}

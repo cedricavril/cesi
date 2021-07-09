@@ -1,0 +1,40 @@
+<html>
+<head>
+	<title>évènements : captures avec bubbling ou bouillonnement </title>
+	<meta charset="utf-8">
+</head>
+<body>
+
+<div id="capture1">
+	<span id="capture2"><a href="#">Phase de bouillonnement</a></span>
+</div>
+
+<div id="boulangerie1">
+	<span id="boulangerie2"><a href="#">Phase de bubbling</a></span>
+</div>
+
+	<script>
+		var capture1 = document.getElementById('capture1'), 
+			capture2 = document.getElementById('capture2'), 
+			boulangerie1 = document.getElementById('boulangerie1'), 
+			boulangerie2 = document.getElementById('boulangerie2');
+
+		capture1.addEventListener('click', function(){
+			alert('phase de capture du DIV');
+		}, true);
+
+		capture2.addEventListener('click', function(){
+			alert('phase de capture du SPAN');
+		}, true);
+
+		boulangerie1.addEventListener('click', function(){
+			alert('phase de capture du DIV');
+		}, false);
+
+		boulangerie2.addEventListener('click', function(){
+			alert('phase de capture du SPAN');
+		}, false);
+
+	</script>
+</body>
+</html>

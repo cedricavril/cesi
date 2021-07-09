@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="FR-fr">
+<head>
+<!--	<meta charset="ISO-8859-1"> -->
+	<meta charset="utf-8" />
+	<meta name="description" content="La page de news du site" />
+	<meta name="keywords" content="mot clef,mot clef" />
+	<meta name="title" content="page de news du site" />
+	<link href="../img/favicon.png" rel="shortcut icon" type="image/png">
+	<link href="../css/style.css" rel="stylesheet" type="text/css">
+	<title>Titre de ma page news</title>
+</head>
+<body>
+	<section>
+		<header>
+			<a href="../index.html"><img src="../img/logo_UBB.jpg" alt="logal" /></a>
+			<nav>
+				<ul>
+					<li><a href="../index.html" target="_self">Accueil</a></li>
+					<li><a href="contact.html" target="_self">Contact</a></li>
+					<li><a href="news.html" target="_self">News</a></li>
+					<li><a href="medias.html" target="_self">Medias</a></li>
+				</ul>
+				<form method="GET" action="http://google.com/search">
+					<input type="search" name="q" placeholder="Effectuez votre recherche">
+					<input type="submit" value="go">
+					<input type="reset" value="effacer">
+				</form>
+			</nav>
+		</header>
+		<menu>
+			<p><a href="../index.html" target="_self">Accueil</a></p>
+			<p><a href="contact.html" target="_self">Contact</a></p>
+			<p><a href="news.html" target="_self">News</a></p>
+			<p><a href="medias.html" target="_self">Medias</a></p>
+		</menu>
+
+		<h1>News</h1>
+		<article>
+			<p>Inscrivez-vous d'abord !</p>
+			<form>
+				<p>
+					<label for="name">Votre nom:</label>
+					<input id="name" name="name" required>
+				</p>
+				<p>
+					<label for="pass1">Mot de passe:</label>
+					<input type="password" id="pass1" required oninput="checkPasswords()">
+				</p>
+				<p>
+					<label for="pass2">Confirmer le mot de passe:</label>
+					<input type="password" id="pass2" required oninput="checkPasswords()">
+				</p>
+				<p><input type="submit"><input type="reset"></p>
+			</form>
+		</article>
+		<aside>
+			<hgroup>
+				<h3><a href="../#">Pub 1</a></h3>
+				<h4><a href="../#">Pub 2</a></h4>
+			</hgroup>
+		</aside>
+		<footer>Mentions légales | &copy; 2017 | CESI</footer>
+	</section>
+<script type="text/javascript">
+	function checkPasswords() {
+		var
+			password1 = document.getElementById('pass1');
+			password2 = document.getElementById('pass2');
+			
+			if(password1.value != password2.value) {
+				password2.setCustomValidity
+				('Désolé, les mots de passe ne correspondent pas !');
+			} else {
+				password2.setCustomValidity
+				('');
+			}
+
+	}
+</script>
+
+
+
+</body>
+</html>

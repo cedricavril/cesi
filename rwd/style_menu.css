@@ -1,0 +1,73 @@
+html {
+	background-color: black;
+}
+
+#global, #global p {
+	margin: auto 15px;
+	background-color: white;
+}
+
+#global nav {
+	background-color: grey;
+	margin: 15px;
+}
+
+#global nav ul{
+	padding: 15px;
+	list-style: none;
+	text-align: center;
+}
+
+#global nav ul li{
+	border-bottom: 1px solid black;
+	padding: 5px;
+	font-family: arial;
+	font-weight: bold;
+}
+
+#global nav ul li:last-child{
+	border-bottom: none;
+}
+
+#global nav ul li a{
+	color: black;
+	text-decoration: none;
+}
+
+#global nav ul li a:hover{
+	color: white;
+}
+
+/* devient rouge en jouant avec la réso du navigateur  */
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5), /* Chrome, Safari, Gecko */
+ only screen and (-o-min-device-pixel-ratio: 3/2), /* Opera  */
+ only screen and (min--moz-device-pixel-ratio: 1.5), /* Mozilla */
+ only screen and (min-device-pixel-ratio: 1.5)  /* Explorer, Edge */ {
+	#global nav {
+		background-color: red;
+	}
+ }
+
+ /* Style pour les r�solutions inf�rieures � 960px de large */ 
+/* Conteneur principal */
+@media screen and (min-width: 960px) {
+section#global {
+	position: absolute; 
+	width: 960px; 
+	left: 50%; 
+	margin-left: -480px; 
+	margin-top: 10px; 
+	background-color: #fff; 
+	}
+}
+
+/* Maintenant, les styles pour les fen�tres inf�rieures � 959px */
+@media screen and (max-width: 959px) {
+	section#global {
+		position: absolute;
+		 width: 100%;
+		 margin-top: 10px;
+		 background-color: #fff;
+	}
+}
+

@@ -1,0 +1,7 @@
+/* Equipe de travail */
+Paul Durand, webmaster @paul_durand, pdurand@lesite.com
+John Doe, graphiste @johndoe, jdoe@lesite.com
+/* Le site */
+Un super site totalement indispensable
+/* Remerciements */
+…

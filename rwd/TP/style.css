@@ -1,0 +1,95 @@
+header, #global {
+	background-color: gold;
+	width: 75%;
+	padding: 0px;
+	margin: 0 auto;
+}
+
+a {
+	text-decoration: none;
+}
+
+header {
+	text-align: center;
+}
+header h1 {
+	text-align: center;
+	font-size: 1.7em;
+	line-height: 100px;
+	margin: 0;
+}
+
+header img {
+	width: 80%;
+}
+
+header h1 a {
+	color: red;
+}
+
+header nav {
+}
+
+header nav ul {
+	list-style: none;
+	padding: 10px;
+	padding-top: 0;
+}
+
+header nav ul li {
+	border-bottom: 1px solid black;
+	text-align: center;
+	padding: 10px;
+}
+
+header nav ul li:first-child {
+	padding-top: 0;
+}
+
+header nav ul li:last-child {
+	border-bottom: none;
+}
+
+header nav ul li a {
+	font-family: arial;
+	color: black;
+}
+
+header nav ul li a:hover {
+	color: white;
+}
+
+article p {
+	float: left;
+	margin: 0;
+	width: 66%;
+	text-align: justify;
+	padding-left: 10px;
+	padding-top: 20px;
+}
+
+article p:first-letter {
+	font-size: 2em;
+}
+
+aside {
+	float: right;
+}
+
+footer {
+	text-align: center;
+	height: 200px;
+	background-color: cornflowerBlue;
+	clear: both;
+}
+
+footer #liens {
+	margin-top: 80px;
+	display: inline-block;
+	line-height: 20px;
+}
+
+footer img {
+     background: url(img/mon-image.png) repeat;
+     background-size: 114px 114px;
+}

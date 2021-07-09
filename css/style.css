@@ -1,0 +1,111 @@
+@font-face {
+  font-family: 'gost';
+  src: url('../font-awesome/fonts/GOST_A_.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+	font-family: Montserrat;
+}
+
+/* hauteur du carousel, remplacé par le logo */
+header.carousel {
+	height: 356px;
+}
+
+#titleacc
+{
+  padding-bottom: 7.5%;
+}
+
+.page-header {
+	color: #262626;
+}
+
+.carousel-inner {
+	text-align: center;
+}
+
+.carousel-inner img {
+	padding: 50px;
+}
+
+.navbar {
+	background-color: #262626;
+	color: white;
+}
+
+.navbar-inverse .navbar-brand,
+.navbar-inverse .navbar-nav li a,
+.navbar-inverse .navbar-nav > li > a:focus,
+.navbar-inverse .navbar-nav > li > a:visited {
+	color: white;
+}
+
+.navbar-brand {
+	font-weight: 200;
+	padding: 10px;
+}
+
+.navbar-brand img {
+	display: inline;
+}
+
+.navbar-inverse .navbar-nav li a:hover,
+.navbar-inverse .navbar-nav > li > a:hover .nav > li:hover {
+	background-color: white;
+	color: #262626;
+}
+
+h1 {
+	line-height: 1.5em;
+	text-align: center;
+	color: white;
+}
+
+p {
+	color: #262626;
+	font-size: em;
+}
+
+.navbar-inverse .navbar-brand:hover {
+	color: white;
+}
+
+a.navbar-brand:hover {
+	color: white;
+}
+
+li.dropdown:nth-child(4) ul li * {
+	color: black;
+}
+
+ul.nav li a  {
+	text-transform: capitalize;
+}
+
+.panel a div h2 {
+	color: #262626;
+}
+
+.nav li a {
+	color: white;
+}
+.panel-default
+{
+  border: none;
+}
+.img-responsive
+{
+  text-align: center;
+  display: inline;
+}
+.thumbnail
+{
+  border: none;
+}
+body
+{
+  overflow-x: hidden;
+}

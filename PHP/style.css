@@ -1,0 +1,10 @@
+ul {
+	display: block;
+}
+
+.blockTablal {
+	display: block;
+	border: 2px solid blue;
+	margin: 20px;
+	float: left;
+}

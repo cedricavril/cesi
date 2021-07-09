@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="FR-fr">
+<meta charset="utf-8">
+<head>
+	<title>Formulaires</title>
+</head>
+<body>
+
+<h1>Effets JavaScript</h1>
+
+<select id="list">
+	<option>Sélectionnez votre genre</option>
+	<option>Femme</option>
+	<option>Homme</option>
+</select>
+
+<form id="myForm">
+	<input id="soumettre" type="submit" >
+	<input id="reset" type="reset" >
+</form>
+
+<script>
+
+var submit = document.getElementById('soumettre');
+var myForm = document.getElementById('myForm');
+
+myForm.addEventListener('submit', function(e){
+	e.preventDefault();
+	alert('submitting');
+});
+
+myForm.addEventListener('reset', function(e){
+	alert('resetting');
+	console.log(getComputedStyle(e.target).backgroundColor);
+	console.log(e.target.offsetHeight);	
+});
+
+
+
+</script>
+</html>

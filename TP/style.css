@@ -1,0 +1,259 @@
+@font-face {
+	font-family: 'Chunkfive';
+	src: url('Chunkfive Ex.ttf') format('truetype');
+}
+
+body, html {
+	background-color: beige;
+	border: 0;
+	margin: 0;
+	padding: 0;
+}
+
+header {
+	background-color: green;
+	text-align: center;
+}
+
+header hgroup {
+	padding-bottom: 5px;
+}
+
+header hgroup a {
+	font-family: Chunkfive;
+	font-size: 2em;
+	top: 50px;
+	margin-left: -100px;
+	position: absolute;
+}
+
+header h1 {
+	font-family: Chunkfive;
+	text-transform: uppercase;
+	text-align: center;
+	transform: translateY(110px);
+}
+
+section#global {
+	margin: 20px auto;
+	padding: 10px;
+	width: 1100px;
+	background-color: white;
+}
+
+#blob {
+	background-color: white;
+	width: 80px;
+	height: 80px;
+	position: relative;
+	margin: auto;
+	margin-bottom: 50px;
+	top:25px;
+}
+
+#blob:after, #blob:before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 80px;
+	height: 80px;
+	background-color: white;
+}
+
+#blob:before {
+	transform: rotate(30deg);
+}
+#blob:after {
+	transform: rotate(60deg);
+}
+
+nav {
+	width: 920px;
+	margin: auto;
+	padding: 10px;
+	background-color: grey;
+	text-align: center;
+}
+
+nav ul {
+	padding: 0;
+	margin: 0 auto;
+	list-style: none;
+}
+
+nav ul li {
+	display: inline-block;
+	margin-right: 10px;
+}
+nav ul li a {
+    display: inline-block;
+    padding: 5px;
+    color: black;
+    text-decoration: none;
+    font-family: 'Chunkfive';
+    font-weight: bold;
+    text-transform: uppercase;
+    height: 24px;
+    line-height: 30px;
+}
+
+nav ul li:hover a {
+	background-color: green;
+	color: white;
+	border-radius: 10px;
+}
+
+article {
+	width: 800px;
+	float: left;
+}
+
+article p {
+	text-align: justify;
+}
+
+article .contenu {
+	border-bottom: 2px solid grey;
+	padding-bottom: 30px;
+}
+
+article .contenu h2 {
+	font-family: arial;
+	text-transform: uppercase;
+}
+
+article .contenu p {
+	white-space: pre-line;
+	padding-left: 260px;
+	padding-top: 15px;
+}
+article .contenu img {
+	display: block;
+	float: left;
+}
+
+article #sous_contenu #gauche {
+	float: left;
+}
+
+article #sous_contenu #droite {
+	float: right;
+}
+
+article #sous_contenu #gauche, article #sous_contenu #droite{
+	width: 350px;
+	margin: 10px;
+	box-shadow: 0px 0px 5px 5px rgb(0,0,0,0.5);
+	padding: 10px;
+}
+
+article #sous_contenu #gauche mark , article #sous_contenu #droite mark {
+	border-radius: 10%;
+	padding: 5px;
+}
+
+aside {
+	float: right;
+	width: 250px;
+}
+
+#pub {
+	clear: both;
+	background-color: cornFlowerBlue;
+	padding: 20px;
+	font-size: 1.7em;
+}
+
+footer {
+	clear: both;
+}
+
+footer nav {
+	background-color: black;
+	width: 100%;
+	padding: 0;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+footer nav ul li a {
+	color: white;
+	font-weight: normal;
+}
+
+footer p {
+	text-align: center;
+}
+
+#liens {
+	text-align: center;
+	padding: 20px;
+}
+#liens li {
+	display: inline;
+	padding: 10px;
+	border-left: 1px solid red;
+}
+
+#liens li a {
+	color: red;
+	font-family: arial;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+#liens li:last-child {
+	border-right: 1px solid red;
+}
+
+aside .side_content h4 {
+	text-decoration: underline;
+}
+
+aside .side_content p {
+	content: "...";
+	display: block;
+	border: 1px dotted green;
+	padding: 5px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+aside input[type="mail"] {
+	width: 150px;
+}
+
+aside .side_video {
+	display: block;
+	border: 1px dotted green;
+	padding: 5px;
+}
+
+article .contenu p a {
+	display: inline-block;
+	padding: 10px;
+	background-color: red;
+	border-radius: 60%;
+	color: white;
+	font-family: ChunkFive;
+	text-decoration: none;
+	transition: 1s;
+}
+
+article .contenu p a:hover {
+	text-decoration: underline;
+	transform: scale(2);
+-webkit-transition: all 1000ms cubic-bezier(0.805, 0, 0.000, 1); /* older webkit */
+-webkit-transition: all 1000ms cubic-bezier(0.805, -0.600, 0.000, 200.650);
+   -moz-transition: all 1000ms cubic-bezier(0.805, -0.600, 0.000, 200.650);
+     -o-transition: all 1000ms cubic-bezier(0.805, -0.600, 0.000, 200.650);
+        transition: all 1000ms cubic-bezier(0.805, -0.600, 0.000, 200.650); /* custom */
+
+-webkit-transition-timing-function: cubic-bezier(0.805, 0, 0.000, 1); /* older webkit */
+-webkit-transition-timing-function: cubic-bezier(0.805, -0.600, 0.000, 200.650);
+   -moz-transition-timing-function: cubic-bezier(0.805, -0.600, 0.000, 200.650);
+     -o-transition-timing-function: cubic-bezier(0.805, -0.600, 0.000, 200.650);
+        transition-timing-function: cubic-bezier(0.805, -0.600, 0.000, 200.650); /* custom */
+}

@@ -1,0 +1,344 @@
+body {
+	border: none 0;
+	margin: 2px;
+}
+
+p {
+	animation-duration: 3s;
+	animation-name: anim;
+	animation-timing-function: ease-in;
+	animation-property: all;
+	animation-iteration-count: 1;
+/* utiliser aussi les préfixes moz webkit etc. */
+
+	color: white;
+	padding: 20px;
+	background-color: green;
+	text-transform: uppercase;
+}
+
+.conteneur {
+	position: relative;
+	width: 500px;
+	height: 200px;
+	background-color: black;
+	margin: auto;
+}
+
+.balle1, .balle2, .balle3, .balle4 {
+	position: absolute;
+	background-color: red;
+	height: 50px;
+	width: 50px;
+	border-radius: 50%;
+	margin-top: 0px;
+	margin-left: 450px;
+	animation-name: baballe1;
+/*	animation: 5s linear 0s normal none 1 bouncing;*/
+	animation-timing-function: ease-in-out (cubic-bezier(0.25,0.25,0.75,0.75));
+	animation-iteration-count: infinite;
+	animation-duration: 3s;
+}
+
+.balle2 {
+	animation-name: baballe2;
+	margin-left: 0px;
+}
+
+.balle3 {
+	animation-name: baballe3;
+	margin-top: 0px;
+}
+
+.balle4 {
+	animation-name: baballe4;
+	margin-top: 150px;
+}
+
+.balle5, .balle6, .balle7, .balle8 {
+	position: absolute;
+	background-color: blue;
+	height: 50px;
+	width: 50px;
+	border-radius: 50%;
+	margin-top: 0px;
+	margin-left: 400px;
+	animation-name: baballe5;
+/*	animation: 5s linear 0s normal none 1 bouncing;*/
+	animation-timing-function: ease-in-out (cubic-bezier(0.25,0.25,0.75,0.75));
+	animation-iteration-count: infinite;
+	animation-duration: 3s;
+}
+
+.balle6 {
+	animation-name: baballe6;
+	margin-left: 0px;
+}
+
+.balle7 {
+	animation-name: baballe7;
+	margin-top: 0px;
+}
+
+.balle8 {
+	animation-name: baballe8;
+	margin-top: 100px;
+}
+
+/* dès que ça marche voir si simplifiable avec steps */
+@keyframes baballe1 {
+	0% {
+		margin-top: 0px;
+		margin-left: 450px;
+	} 25% {
+		margin-top: 150px;
+		margin-left: 450px;
+	} 50% {
+		margin-top: 150px;
+		margin-left: 0px;
+	} 75% {
+		margin-top: 0px;
+		margin-left: 0px;
+	} 100% {
+		margin-top: 0px;
+		margin-left: 450px;
+	}
+}
+@keyframes baballe2 {
+	0% {
+		margin-top: 0px;
+		margin-left: 0px;
+	} 25% {
+		margin-top: 0px;
+		margin-left: 450px;
+	} 50% {
+		margin-top: 150px;
+		margin-left: 450px;
+	} 75% {
+		margin-top: 150px;
+		margin-left: 0px;
+	} 100% {
+		margin-top: 0px;
+		margin-left: 0px;
+	}
+}
+
+@keyframes baballe3 {
+	0% {
+		margin-top: 150px;
+		margin-left: 0px;
+	} 25% {
+		margin-top: 0px;
+		margin-left: 0px;
+	} 50% {
+		margin-top: 0px;
+		margin-left: 450px;
+	} 75% {
+		margin-top: 150px;
+		margin-left: 450px;
+	} 100% {
+		margin-top: 150px;
+		margin-left: 0px;
+	}
+}
+
+@keyframes baballe4 {
+	0% {
+		margin-top: 150px;
+		margin-left: 450px;
+	} 25% {
+		margin-top: 150px;
+		margin-left: 0px;
+	} 50% {
+		margin-top: 0px;
+		margin-left: 0px;
+	} 75% {
+		margin-top: 0px;
+		margin-left: 450px;
+	} 100% {
+		margin-top: 150px;
+		margin-left: 450px;
+	}
+}
+
+
+
+
+@keyframes baballe5{
+	0% {
+		margin-top: 50px;
+		margin-left: 400px;
+	} 25% {
+		margin-top: 100px;
+		margin-left: 400px;
+	} 50% {
+		margin-top: 100px;
+		margin-left: 50px;
+	} 75% {
+		margin-top: 50px;
+		margin-left: 50px;
+	} 100% {
+		margin-top: 50px;
+		margin-left: 400px;
+	}
+}
+@keyframes baballe6 {
+	0% {
+		margin-top: 50px;
+		margin-left: 50px;
+	} 25% {
+		margin-top: 50px;
+		margin-left: 400px;
+	} 50% {
+		margin-top: 100px;
+		margin-left: 400px;
+	} 75% {
+		margin-top: 100px;
+		margin-left: 50px;
+	} 100% {
+		margin-top: 50px;
+		margin-left: 50px;
+	}
+}
+
+@keyframes baballe7 {
+	0% {
+		margin-top: 100px;
+		margin-left: 50px;
+	} 25% {
+		margin-top: 50px;
+		margin-left: 50px;
+	} 50% {
+		margin-top: 50px;
+		margin-left: 400px;
+	} 75% {
+		margin-top: 100px;
+		margin-left: 400px;
+	} 100% {
+		margin-top: 100px;
+		margin-left: 50px;
+	}
+}
+
+@keyframes baballe8 {
+	0% {
+		margin-top: 100px;
+		margin-left: 400px;
+	} 25% {
+		margin-top: 100px;
+		margin-left: 50px;
+	} 50% {
+		margin-top: 50px;
+		margin-left: 50px;
+	} 75% {
+		margin-top: 50px;
+		margin-left: 400px;
+	} 100% {
+		margin-top: 100px;
+		margin-left: 400px;
+	}
+}
+
+
+/*@keyframes baballe2 {
+	0% {
+		margin-top: 0px;
+	} 50% {
+		margin-top: 150px; 
+	} 100% {
+		margin-top: 0px;
+	}
+}
+@keyframes baballe3 {
+	0% {
+		margin-left: 450px;
+	} 50% {
+		margin-left: 0;
+	} 100% {
+		margin-left: 450px;
+	}
+}
+@keyframes baballe4 {
+	0% {
+		margin-left: 0px;
+	} 50% {
+		margin-left: 450px;
+	} 100% {
+		margin-left: 0px;
+	}
+}*/
+@keyframes anim {
+	0% {
+		margin-left: 100%;
+		width: 100%;
+	}
+	50% {
+		color: red;
+	}
+	100% {
+		margin-left: 0%;
+		width: 100%;
+	}
+}
+
+@keyframes bouncing {
+40%, 70%, 90%{
+	bottom: 0;
+	-webkit-animation-timing-function: ease-out;
+}
+0% {
+	bottom: 200px;
+	left: 0;
+	-webkit-animation-timing-function: ease-in;
+}
+55% {
+	bottom: 50px;
+	-webkit-animation-timing-function: ease-in;
+}
+80% {
+	bottom: 25px;
+	-webkit-animation-timing-function: ease-in;
+}
+95% {
+	bottom: 10px;
+	-webkit-animation-timing-function: ease-in;
+}
+100% {
+	left: 500px;
+	bottom: 0;
+	-webkit-animation-timing-function: ease-out;
+}}
+
+nav ul {
+	width: 800px;
+	padding: 0;
+	margin: auto;
+	text-align: center;
+}
+
+nav ul li {
+	display: inline-block;
+	padding: 5px;
+	margin-bottom: 15px;
+}
+
+ul li img {
+	transition: all 0.5s cubic-bezier(0.4, 2, 0.3, 1);
+	opacity: 0.5;
+}
+
+ul li img:hover {
+	transform: scale(1.2) rotate(360deg);
+	opacity: 1;
+}
+nav ul li {
+	transition: all 0.5s cubic-bezier(0.4, 2, 0.3, 1);
+	opacity: 0.5;
+}
+
+nav ul li:hover {
+	cursor: pointer;
+	transform: scale(1.2) rotate(360deg);
+	opacity: 1;
+}
+

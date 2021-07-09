@@ -1,0 +1,30 @@
+<html>
+<head>
+	<title>évènements : mouseover dans différents containers</title>
+	<meta charset="utf-8">
+</head>
+<body>
+
+<p id="result"></p>
+
+<div id="parent1"><p>Parent n°1 : onmouseover de l'enfant</p><div id="enfant1">premier enfant</div></div>
+<div id="parent2"><p>Parent n°2 : onmouseout de l'enfant</p><div id="enfant2">deuxième enfant</div></div>
+
+<script>
+
+// bof parce que pas de taille pour les containers - améliorer
+
+var resultat = document.getElementById('result'), 
+	parent1 = document.getElementById('parent1'), 
+	parent2 = document.getElementById('parent2');
+
+parent1.addEventListener('mouseover', function(e){
+	result.innerHTML = "Voici l'élément survolé : " + e.relatedTarget.id;
+});
+
+parent2.addEventListener('mouseout', function(e){
+	result.innerHTML = "Voici l'élément quitté : " + e.relatedTarget.id;
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+body, html {
+	font-family: Arial, Helvetica, sans-serif;
+	margin: 0;
+	border: 0 none;
+	padding: 0;
+}
+
+section#global {
+	max-width: 960px;
+	margin: auto;
+}
+
+section#global h1 {
+	text-align: center;
+	padding: 10px;
+	margin-bottom: 20px;
+}
+
+div#gauche {
+	float: left;
+	background-color: CornflowerBlue;
+	width: 410px;
+}
+
+div#droite {
+	float: right;
+	background-color: Palegreen;
+	width: 410px;
+}
+
+div#gauche_bas {
+	float: left;
+	background-color: Peru;
+	width: 410px;
+}
+
+div#droite_bas {
+	float: right;
+	background-color: HotPink;
+	width: 410px;
+}
+
+#gauche, #droite, #gauche_bas, #droite_bas {
+	padding: 10px;
+	margin-bottom: 10px;
+	border-radius: 10px;
+}
+
+div.bas {
+	clear: both;
+}
+
+div.bas p {
+	margin: auto;
+	text-align: center;
+	padding: 10px;
+}

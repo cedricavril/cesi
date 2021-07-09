@@ -1,0 +1,13 @@
+Technique de centrage horizontale autre que margin auto : 
+	width: 960px;
+	left: 50%;
+	margin-left: -480px;
+
+Centrage vertical d'un texte : 
+line-height: < hauteur du conteneur >
+
+					FONTS
+
+console : pour avoir la liste des fonts : fc-list
+mettre des '' pour le font-family quand on appelle le font e.g. via un lien externe css.
+

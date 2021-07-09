@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="FR-fr">
+<meta charset="utf-8">
+<link rel="stylesheet" type="text/css" href="formulaire_style.css">
+<head>
+	<title>Formulaires</title>
+</head>
+<body>
+
+<!--genre						radio
+nom							text
+prénom						text
+mail						mail
+âge							text
+pseudo						text
+mdp							password
+conf mdp					password
+ville 						select
+newsletter oui/non?			checkbox
+submit et reset-->
+
+<header>
+	
+</header>
+
+<fieldset><legend align="center">the form</legend>
+	<form id="myForm">
+		<p>
+			<select id="genre">
+				<option>Sélectionnez votre genre</option>
+				<option>Femme</option>
+				<option>Homme</option>
+			</select>
+		</p>
+
+		<p>
+			<input type="text" id="nom" placeholder="Nom">
+			<input type="text" id="prenom" placeholder="Prénom">
+		</p>
+
+		<p>
+			<input type="email" id="courrier" placeholder="e-mail">
+		</p>
+
+		<p>
+			<input type="text" id="age" placeholder="age">
+			<input type="text" id="pseudal" placeholder="pseudo">
+		</p>
+		
+		<p>
+			<input type="password" id="pass" placeholder="mot de passe">
+			<input type="password" id="confPass" placeholder="confirmation du mot de passe">
+		</p>
+
+		<p>
+			<label>Département : <select id="departements" onchange="synchVilles(this.value);">
+				<option></option>
+				<option></option>
+				<option></option>
+			</select></label>
+		</p>
+
+		<label id="labelVilles">Ville : 
+		<select id="villes">
+			<option></option>
+			<option></option>
+			<option></option>
+		</select>
+		</label>
+
+
+		<p>
+			<label>Newsletter? <input type="checkbox" id="newsletter" checked></label>
+		</p>
+
+		<p>	
+			<input id="soumettre" type="submit" >
+			<input id="reset" type="reset" >
+		</p>
+	</form>
+</fieldset>
+
+<script>
+
+var submit = document.getElementById('soumettre'),
+myForm = document.getElementById('myForm'),
+genre = document.getElementById('genre'), 
+nom = document.getElementById('nom'), 
+prenom = document.getElementById('prenom'), 
+mail = document.getElementById('courrier'), 
+age = document.getElementById('age'), 
+pseudal = document.getElementById('pseudal'), 
+pass = document.getElementById('pass'), 
+confPass = document.getElementById('confPass'), 
+villes = document.getElementById('villes'), 
+listeDepartements = document.getElementById('departements');
+
+myForm.addEventListener('submit', function(e){
+	e.preventDefault();
+
+var activationErreur = (function(condition, element){
+	if(condition)
+		element.style.backgroundColor = 'red';
+	else
+		element.style.backgroundColor = 'white';
+});
+
+	activationErreur(genre.value == genre.options[0].value, genre);
+	activationErreur((!nom.value || nom.value.match(/[\d]+/)), nom);
+	activationErreur((!prenom.value || prenom.value.match(/[\d]/)), prenom);
+	activationErreur((!pseudal.value || pseudal.value.match(/[\d]/)), pseudal);
+// fonctionne pas car le type de champ empêche de prendre la main sur l'erreur
+	activationErreur((!mail.value || mail.value.length <= 2), mail);
+	activationErreur((!age.value || !age.value.match(/^\d+$/)), age);
+	activationErreur((!confPass.value || confPass.value != pass.value), confPass);
+	activationErreur(getComputedStyle(villes).display == "none", listeDepartements);
+});
+
+myForm.addEventListener('reset', function(e){
+	// cacher le select #villes
+
+});
+
+// VILLES
+// initialisation et hydratation
+// remplissage de la liste des départements à cliquer
+var departements = Array('Gironde', 'Île de France', 'Morbihan');
+for(var i=0; i<departements.length; i++) 
+  document.getElementById('departements').options[i].innerHTML = departements[i];
+
+// hydratation du tableau des villes selon les départements : tableau de tableaux
+var departementsVilles = new Array(
+  Array('Bordeaux','Pessac','Bègles'),
+  Array('Paris 1', 'Paris 2', 'Paris 3'),
+  Array('Bretagne', 'Zoo', 'Asile')
+);
+
+var synchVilles = function(departement){
+  // récupération de l'index du tableau en fonction du nom de département choisi par l'utilisateur Cf. this.value dans le html
+  indexChoisi = departements.indexOf(departement);
+
+  //remplissage de la liste des villes du département choisi - on suppose que le nombre de ville est le même pour chaque département
+  for(var j=0; j<departementsVilles[indexChoisi].length; j++) 
+    document.getElementById('villes').options[j].innerHTML = departementsVilles[indexChoisi][j];
+}
+// FIN VILLES
+
+
+</script>
+</html>

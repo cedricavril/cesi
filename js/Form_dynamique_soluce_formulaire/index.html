@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<head>
+<meta charset="utf-8">
+<title>Formulaire dynamique en JavaScript</title>
+<link href="style.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+
+<fieldset>
+
+	<legend>Contactez-nous</legend>
+    
+		<form id="myForm">
+	
+        <label class="colonne">Genre :</label>
+        <label><input name="sexe" type="radio" value="H">Homme</label>
+        <label><input name="sexe" type="radio" value="F">Femme</label>
+		<label><input name="sexe" type="radio" value="A">Autre</label>
+        <div class="tooltip">Vous devez sélectionner votre genre</div>
+		
+        <p></p>
+		
+        <label class="colonne">Nom :</label>
+        <input name="nom" id="nom" type="text">
+        <div class="tooltip">Un nom ne peut pas faire moins de 2 caractères</div>
+		
+        <p></p>
+		
+        <label class="colonne">Prénom :</label>
+        <input name="prenom" id="prenom" type="text">
+        <div class="tooltip">Un prénom ne peut pas faire moins de 2 caractères</div>
+		
+        <p></p>
+		
+		<label class="colonne">Mail :</label>
+        <input name="mail" id="mail" type="email">
+        <div class="tooltip">Un mail doit contenir au moins un arobase et plusieurs caractères !</div>
+		
+		<p></p>
+		
+        <label class="colonne">Âge :</label>
+        <input name="age" id="age" type="text">
+        <div class="tooltip">L'âge doit être compris entre 5 et 140</div>
+		
+        <p></p>
+		
+        <label class="colonne">Pseudonyme :</label>
+        <input name="pseudonyme" id="pseudonyme" type="text">
+        <div class="tooltip">Le pseudonyme ne peut pas faire moins de 4 caractères</div>
+		
+        <p></p>
+		
+        <label class="colonne">Mot de passe :</label>
+        <input name="passe1" id="passe1" type="password">
+        <div class="tooltip">Le mot de passe ne doit pas faire moins de 6 caractères</div>
+		
+        <p></p>
+		
+        <label class="colonne">Confirmer votre mot de passe :</label>
+        <input name="passe2" id="passe2" type="password">
+        <div class="tooltip">Le mot de passe de confirmation doit être identique à celui d'origine</div>
+		
+        <p></p>
+		
+        <label class="colonne">Votre ville :</label>
+        <select name="ville" id="ville">
+        	<option value="none">Sélectionnez dans la liste</option>
+        	<option value="bordeaux">Bordeaux</option>
+        	<option value="paris">Paris</option>
+        	<option value="lyon">Lyon</option>
+			<option value="marseille">Marseille</option>
+    	</select>
+        <div class="tooltip">Vous devez sélectionner votre ville !</div>
+		
+        <p></p>
+		
+        <label class="colonne"></label>
+        <label><input name="news" type="checkbox"> Je désire recevoir la newsletter chaque mois</label>
+		
+        <p></p>
+		
+        <label class="colonne"></label>
+        <input type="submit" value="Envoyer"> <input type="reset" value="Effacer">
+    </form>
+	
+</fieldset>
+
+<script>
+// Fonctions de vérification du formulaire, elles renvoient "true" si tout est ok
+var check = {}; // On met toutes nos fonctions dans un objet littéral
+check['sexe'] = function()
+{
+    var votreGenre = document.getElementsByName('sexe'),
+        tooltipStyle = getTooltip(votreGenre[0].parentNode).style;
+    if (votreGenre[0].checked || votreGenre[1].checked || votreGenre[2].checked)
+	{
+        tooltipStyle.display = 'none';
+        return true;
+    }
+	else
+	{
+        tooltipStyle.display = 'inline-block';
+        return false;
+    }
+};
+
+check['nom'] = function(id) // l'argument id permet d'économiser du code et d'utiliser le même id pour le prénom et le nom
+{
+    var name = document.getElementById(id),
+        tooltipStyle = getTooltip(name).style;
+    if (name.value.length >= 2)
+	{
+        name.className = 'valid'; // la même classe pour les deux éléments (nom + prénom)
+        tooltipStyle.display = 'none';
+        return true;
+    } 
+	else
+	{
+        name.className = 'invalid';
+        tooltipStyle.display = 'inline-block';
+        return false;
+    }
+};
+
+check['prenom'] = check['nom']; // La fonction pour le prénom est la même que celle du nom
+
+check['age'] = function()
+{
+    var age = document.getElementById('age'),
+        tooltipStyle = getTooltip(age).style,
+        ageValue = parseInt(age.value);
+    if (!isNaN(ageValue) && ageValue >= 5 && ageValue <= 140)
+	{
+        age.className = 'valid';
+        tooltipStyle.display = 'none';
+        return true;
+    }
+	else
+	{
+        age.className = 'invalid';
+        tooltipStyle.display = 'inline-block';
+        return false;
+    }
+};
+
+check['mail'] = function()
+{
+    var mail = document.getElementById('mail'),
+        tooltipStyle = getTooltip(mail).style;
+    if (mail.value.length >= 2)
+	{
+        mail.className = 'valid';
+        tooltipStyle.display = 'none';
+        return true;
+    } 
+	else
+	{
+        mail.className = 'invalid';
+        tooltipStyle.display = 'inline-block';
+        return false;
+    }
+};
+
+check['pseudonyme'] = function()
+{
+    var user = document.getElementById('pseudonyme'),
+        tooltipStyle = getTooltip(user).style;
+    if (user.value.length >= 4)
+	{
+        user.className = 'valid';
+        tooltipStyle.display = 'none';
+        return true;
+    }
+	else
+	{
+        user.className = 'invalid';
+        tooltipStyle.display = 'inline-block';
+        return false;
+    }
+};
+
+check['passe1'] = function()
+{
+    var password1 = document.getElementById('passe1'),
+        tooltipStyle = getTooltip(password1).style;
+    if (password1.value.length >= 6)
+	{
+        password1.className = 'valid';
+        tooltipStyle.display = 'none';
+        return true;
+    }
+	else
+	{
+        password1.className = 'invalid';
+        tooltipStyle.display = 'inline-block';
+        return false;
+    }
+};
+
+check['passe2'] = function()
+{
+    var password1 = document.getElementById('passe1'),
+        password2 = document.getElementById('passe2'),
+        tooltipStyle = getTooltip(password2).style;
+		
+    if (password1.value == password2.value && password2.value != '')
+	{
+        password2.className = 'valid';
+        tooltipStyle.display = 'none';
+        return true;
+    }
+	else
+	{
+        password2.className = 'invalid';
+        tooltipStyle.display = 'inline-block';
+        return false;
+    }
+};
+
+check['ville'] = function()
+{
+    var ville = document.getElementById('ville'),
+        tooltipStyle = getTooltip(ville).style;
+    if (ville.options[ville.selectedIndex].value != 'none')
+	{
+        tooltipStyle.display = 'none';
+        return true;
+    }
+	else
+	{
+        tooltipStyle.display = 'inline-block';
+        return false;
+    }
+};
+
+// Mise en place des événements
+(function()
+{ // Utilisation d'une IIFE (Immediately Invoked Function Expression) pour éviter les variables globales, dont les portées risquent d'endommager le code !
+    var myForm = document.getElementById('myForm'),
+        inputs = document.querySelectorAll('input[type=text], input[type=password], input[type=radio]'),
+        inputsLength = inputs.length;
+		
+    for (var i = 0; i < inputsLength; i++)
+	{
+        inputs[i].addEventListener('keyup', function(e)
+		{
+            check[e.target.id](e.target.id); // "e.target" représente l'input actuellement modifié
+        });
+    }
+	
+    myForm.addEventListener('submit', function(e)
+	{
+        var result = true;
+        for (var i in check) // le "for...in" parcourt sans ordre précis les éléments d'un tableau pour les énumérer et renvoyer un résultat correspondant
+		{
+            result = check[i](i) && result; //tableau et valeur de variable
+        }
+        if (result)
+		{
+            alert('Le formulaire est bien rempli.');
+        }
+        e.preventDefault();
+    });
+	
+    myForm.addEventListener('reset', function()
+	{
+        for (var i = 0; i < inputsLength; i++)
+		{
+            inputs[i].className = '';
+        }
+        desactivateTooltips();
+    });
+})
+();
+
+
+
+// Les tooltips !
+// Fonction de désactivation de l'affichage des "tooltips" ou bulle d'aide
+function desactivateTooltips()
+	{
+    var tooltips = document.querySelectorAll('.tooltip'),
+        tooltipsLength = tooltips.length;
+    for (var i = 0; i < tooltipsLength; i++)
+	{
+        tooltips[i].style.display = 'none';
+    }
+}
+
+// La fonction ci-dessous permet de récupérer la "tooltip" qui correspond à notre input
+function getTooltip(elements)
+{
+    while (elements = elements.nextSibling) // le nextSibling renvoie le node (noeud) dans l'ordre suivant le node spécifié à l'intérieur d'une liste enfant
+	{
+        if (elements.className === 'tooltip')
+		{
+            return elements;
+        }
+    }
+    return false;
+}
+
+// Maintenant que tout est rempli, on peut désactiver les "tooltips"
+desactivateTooltips();
+</script>
+
+</body>
+</html>

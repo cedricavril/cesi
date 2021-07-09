@@ -1,0 +1,78 @@
+<!-- En fait, commencer par <html> et utiliser les attributs svg ensuite -->
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20010904//EN"
+"http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<xml:lang="fr"
+xmlns="http://www.w3.org/2000/svg"
+xmlns:xlink="http://www.w3.org/1999/xlink">
+<head>
+<title>Tests SVG en XML</title>
+<meta name="description" content="svg en xml">
+</head>
+<body>
+
+	<svg width="960" height="600" style="border: 2px solid blue">
+<!--		<rect width="250" height="50" x="80" y="100" rx="50" ry="70" fill="orange" />
+		<circle cs="155" cy="120" r="50" fill="black" />
+		<line x1="" y1="50" x2="" y2="100" stroke="red" stroke-width="5" stroke-linecap="round" stroke-dasharray="5" />
+
+		<polygon style="fill: default" points="0,0 20,0 30,10 20,20 0,20"/>
+		<polygon style="stroke: foreground" points="0,0 20,0 30,10 20,20 0,20"/>-->
+		
+<!--		<ellipse style="fill: background" cx="5" cy="5" rx="5" ry="5"/>
+		<ellipse style="stroke: foreground" cx="5" cy="5" rx="5" ry="5"/>-->
+
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" fill="#e64a19" viewBox="0 0 24 24"><path d="M21.82,15.42L19.32,19.75C18.83,20.61 17.92,21.06 17,21H15V23L12.5,18.5L15,14V16H17.82L15.6,12.15L19.93,9.65L21.73,12.77C22.25,13.54 22.32,14.57 21.82,15.42M9.21,3.06H14.21C15.19,3.06 16.04,3.63 16.45,4.45L17.45,6.19L19.18,5.19L16.54,9.6L11.39,9.69L13.12,8.69L11.71,6.24L9.5,10.09L5.16,7.59L6.96,4.47C7.37,3.64 8.22,3.06 9.21,3.06M5.05,19.76L2.55,15.43C2.06,14.58 2.13,13.56 2.64,12.79L3.64,11.06L1.91,10.06L7.05,10.14L9.7,14.56L7.97,13.56L6.56,16H11V21H7.4C6.47,21.07 5.55,20.61 5.05,19.76Z" /></svg>
+
+		<defs>
+			<g id="test">
+				<rect width="150" height="50" fill="orange" x="100" y="200" />
+				<circle cx="175" cy="225" r="30" fill="black" />
+			</g>
+
+			<g id="test2" />
+				<rect width="50" height="550" fill="orange" >
+					<animateTransform
+						attributeName="transform"
+						attributType="xml"
+						type="translate"
+						from="0" to="100"
+						dur="3s" begin="0s"
+						repeatCount="1"
+						fill="freeze"
+					/>
+				</rect>
+			</g>
+
+		</defs>
+
+		<use xlink:href="#test" x="50" y="0" />
+		<use xlink:href="#test" x="50" y="100" />
+		<use xlink:href="#test" x="50" y="200" />
+		<use xlink:href="#test" x="50" y="300" />
+
+		<polygon style="stroke: black; fill: white" points="125,0 250,125 125,250 0,125" />
+		<line x1="500" y1="200" x2="501" y2="201" stroke="red" stroke-width="200" stroke-linecap="square" fill="white" />
+
+		<rect width="150" height="50" fill="orange" transform="translate(800,150) rotate(45)" />
+		<rect width="150" height="50" fill="green" stroke="black" transform="scale(2,1.5)" />
+		<rect width="150" height="50" fill="yellow" stroke="black" transform="translate(75 12.5)" />
+
+		<rect width="50" height="550" fill="orange" >
+			<animateTransform
+				attributeName="transform"
+				attributType="xml"
+				type="translate"
+				from="0" to="100"
+				dur="3s" begin="0s"
+				repeatCount="1"
+				fill="freeze"
+			/>
+		</rect>
+
+		<use xlink:href="#test2" x="100" y="0" />
+	</svg>
+
+</body>
+</xml>

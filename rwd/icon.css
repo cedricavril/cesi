@@ -1,0 +1,63 @@
+.icon_normal{
+  display: block;
+  height: 60px;
+  background: url(Img/my-icon.png);
+  background-size: 60px 60px;
+  background-repeat: no-repeat;
+}
+.icon_HD{
+  display: block;
+  height: 120px;
+  background: url(Img/my-icon@2x.png);
+  background-size: 120px 120px;
+  background-repeat: no-repeat;
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+ only screen and (-o-min-device-pixel-ratio: 3/2),
+ only screen and (min--moz-device-pixel-ratio: 1.5),
+ only screen and (min-device-pixel-ratio: 1.5) {
+  .icon_normal{
+    background: url(Img/my-icon.png);
+	background-repeat: no-repeat;
+	background-size: 30px 30px;
+  }
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+ only screen and (-o-min-device-pixel-ratio: 3/2),
+ only screen and (min--moz-device-pixel-ratio: 1.5),
+ only screen and (min-device-pixel-ratio: 1.5) {
+  .icon_HD{
+    background: url(Img/my-icon@2x.png);
+	background-repeat: no-repeat;
+	background-size: 60px 60px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+ only screen and (-o-min-device-pixel-ratio: 3/2),
+ only screen and (min--moz-device-pixel-ratio: 1.5),
+ only screen and (min-device-pixel-ratio: 1.5) {
+  .icon{
+    background-image: url(my-icon@2x.png) no-repeat;
+	background-size: 30px 30px;
+  }
+}
+*/
+ 

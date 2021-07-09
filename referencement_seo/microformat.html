@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head profile="URL">
+  <title>Des éléments en microformat</title>
+</head>
+<body>
+
+  <section itemtype="http://microformats.org/profile/hcard" itemscope>
+    <h1 itemprop="test">Le titre en microformat</h1>
+		<div itemprop="adr" itemscope>
+		  <p itemprop="street-address">56, rue des fauvettes</p>
+		  <p itemprop="locality">Jouy-en-Josas</p>
+		  <p itemprop="postal-code">59000</p>
+		</div>
+    <a href="#" itemprop="url">Un lien</a>
+  </section>
+  
+  <!-- variante -->
+	<dl class="profile">
+		<dt id="title">Encore un titre</dt>
+		<dd>Un super texte absolument magnifique.</dd>
+	</dl>
+
+</body>
+</html>

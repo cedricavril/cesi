@@ -1,0 +1,21 @@
+header {
+  margin: 50px auto;
+  height: 200px;
+  width: 80%;
+  background-color: blue;
+  border-radius: 25px;
+}
+
+header select {
+	margin-top: 20px;
+	margin-left: 33%;
+	border-radius: 2px;
+}
+
+header select#departements {
+	background-color: grey;
+}
+
+header select#villes {
+	background-color: green;
+}

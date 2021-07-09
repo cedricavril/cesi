@@ -1,0 +1,125 @@
+header #photo {
+	width: 200px;
+}
+
+menu {
+	float: left;
+	height: 200px;
+	width: 200px;
+	background-color: blue;
+}
+menu p {
+	font-family: arial, Helvetica, sans-serif;
+}
+menu a {
+	font-family: arial, Helvetica, sans-serif;
+	text-decoration: none;
+	color: white;
+}
+
+section {
+	margin: auto;
+	margin-top: 25px;
+	width: 1500px;
+	background-color:white;
+}
+
+menu p a {
+	background-size: cover;
+	background-image: none;
+}
+
+menu p a:hover {
+	background-image: url(../img/puce.jpg);
+}
+
+hr {
+	border: 0;
+	height: 12px;
+	width: 100%;
+	background-image: url(../img/separateur.png);
+}
+
+aside {
+	float: right;
+	border: 1px solid purple;
+	width: 200px;
+}
+aside hgroup {
+	text-align: center;
+	color: purple;
+	height: 200px;
+}
+aside hgroup a {
+	text-decoration: none;
+}
+
+/* modèle ci dessous */
+
+body, html {
+	border: 0;
+	padding: 0;
+	margin:  0;
+
+	background-color: PaleGreen;
+	overflow: auto;
+}
+
+
+header {
+	border: 0;
+	padding: 0;
+}
+
+article p {
+	font-family: arial, Helvetica, sans-serif;	
+	height: 20px;
+}
+article p::before {
+	content: url("../img/puce.jpg");
+}
+article p img {
+	width: 20px;
+}
+article {
+	float: left;
+	width: 1000px;
+	padding-top: 50px;
+}
+article h1 {
+	padding: 20px;
+	margin: 10px;
+	font-size: 2em;
+}
+article h1, article h2 {
+	font-family: arial, Helvetica, sans-serif;	
+}
+header nav {
+	text-align: center;
+	font-family: arial, Helvetica, sans-serif;
+	padding-bottom: 20px;
+}
+header nav ul {
+}
+header nav ul li {
+	display: inline;
+	padding: 10px;
+}
+header nav ul li a {
+	text-decoration: none;
+}
+header nav ul li a:hover {
+	text-decoration: underline;
+}
+footer {
+	clear: both;
+	text-align: center;
+	padding: 10px;
+}
+
+#phone {
+	display: block;
+	padding-top: 1em;
+	padding-bottom: 0;
+	font-size: 2em;
+}

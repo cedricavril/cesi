@@ -1,0 +1,235 @@
+@page{
+    size: auto;
+    margin: 0mm auto; /* empêche l'affichage du titre, numéro de page, etc.*/
+}
+
+@font-face {
+    font-family: 'segoe UI';
+    src: url('font/segoeui.ttf') format('truetype');
+}
+
+html {
+    background: white;
+    color: black;
+    font: 14px "Segoe UI",Arial,sans-serif;
+    margin: 0;
+    padding: 0;
+}
+body {
+    margin: auto;
+    width: 230mm;
+    height: 297mm;
+}
+h1, h3 {
+    letter-spacing: 0.1em;
+}
+
+h4 {
+    margin-bottom: 0;
+}
+section {
+    clear: both;
+    margin-top: 1.5em;
+    border-top: 2px solid #2E8B57;
+}
+li {
+    list-style-type: disc;
+}
+section > ul > li,
+header > ul > li, 
+header #sousdiv ul#header-left > li,
+header #sousdiv ul#header-right > li {
+    list-style-type: none;
+    margin-bottom: .5em;
+}
+
+header #sousdiv ul#header-left > li,
+header #sousdiv ul#header-right > li {
+    margin: 0;
+}
+
+.headline-name {
+    border-bottom: 1px solid black;
+    padding-bottom: .5em;
+}
+.contact-column {
+    float: left;
+    padding: 0 1px;
+}
+a,
+a:link,
+a:visited {
+    border-bottom: 1px dotted rgb(0, 120, 180);
+    color: rgb(0, 120, 180);
+    padding: .2em .1em;
+    text-decoration: none;
+}
+a:focus,
+a:hover,
+a:active {
+    background-color: rgb(255, 245, 0);
+    border-bottom: 1px solid rgb(0, 120, 180);
+    color: rgb(0, 120, 180);
+}
+@media (min-width: 992px) {
+    .contact-column {
+        margin-left: 1em;
+    }
+    .contact-column.right {
+        float: right;
+    }
+}
+@media (max-width: 776px) {
+    ul {
+        margin-left: 0;
+        margin-right: 0;
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+@media print {
+    html {
+        color: black;
+        font-size: 12px;
+    }
+    body {
+        margin-top: 1.5em;
+        width: 90%;
+    }
+    section {
+        margin-top: 1em;
+    }
+    a,
+    a:link,
+    a:visited {
+        border: none;
+        color: black;
+    }
+    a:after { content: " (" attr(href) ") "; } ; 
+}
+
+
+header * {
+border: 0;
+}
+
+header {
+
+}
+
+header #title {
+    float: left;
+    height: 6em;
+}
+header #title h2 {
+    font-weight: normal;
+    color: grey;
+    line-height: 0;
+    font-size: 1.2em;
+    margin: 0;
+    color: #2E8B57;
+}
+
+header #title h1 {
+    padding: 0;
+    margin: 0;
+    font-size: 2.5em;
+}
+
+header hr {
+    border: 3px solid black;
+    width: 6em;
+    clear: left;
+    float: left;
+    margin: 0;
+    padding: 0;
+}
+
+header img {
+    float: right;
+    width: 150px;
+}
+
+header ul {
+    margin: 0;
+    padding: 0;
+}
+
+header #sousdiv {
+    display: inline-block;
+    clear: both;
+    margin-left: -6em;
+    width: calc(100% - 200px);
+}
+
+header #sousdiv ul#header-left {
+    display: inline-block;
+}
+
+header #sousdiv ul#header-right {
+    float: right;
+    text-align: right;
+}
+
+section#education #barreVerticale{
+    border-right: 4px solid #2E8B57;
+    height: 500px;
+    margin-top: 10px;
+    float: left;
+}
+
+section#education ul#titreFormation {
+    float: left;
+    width: 200px;
+}
+section#education ul#contenuFormation li {
+    list-style-type: disc;
+}
+section#education ul#contenuFormation {
+    float: left;
+    width: 650px;
+}
+
+section#education ul#titreFormation li {
+    margin: 0;
+    padding: 0;
+}
+
+section#education ul#titreFormation li, 
+section#education ul#contenuFormation li {
+    list-style-type: none;
+}
+
+section#education ul#contenuFormation li {
+    margin-top: 20px;
+}
+
+section#education ul#contenuFormation li {
+    display: inline;
+    margin: 0;
+    margin-left: 10px;
+    float: left;
+    margin-top: 20px;
+}
+
+section#education ul#contenuFormation li:first-child {
+    margin-top: 0;
+}
+
+section#education ul#titreFormation, 
+section#education ul#titreFormation li ul,
+section#education ul#contenuFormation {
+    margin: 0;
+    padding: 0;
+}
+
+.discVert {
+    border-radius: 50%;
+//    background-color: #095228;
+    background-color: black;
+    width: 10px;
+    height: 10px;
+    float: left;
+    margin-left: -17px;
+    margin-top: 5px;
+}

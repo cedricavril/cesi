@@ -1,0 +1,595 @@
+div {
+	float: left;
+}
+#square {
+	width: 200px;
+	height: 200px;
+	background-color: DarkOrange;
+}
+
+#round {
+	width: 200px;
+	height: 200px;
+	border-radius: 50%;
+	background-color: DarkOrange;
+}
+
+/* test camembert */
+
+#camembert {
+	width: 200px;
+	height: 200px;
+	border-radius: 50%;
+	background-color: red;	
+}
+
+[id^='coupe-'] {
+	transform-origin: top left;
+	margin: 0;
+	border-top: 100px solid white;
+	border-left: 0px solid transparent;
+	border-right: 100px solid transparent;
+	background-color: transparent;
+}
+
+#coupe-1 {
+	transform: translateX(100px);
+}
+
+#coupe-2 {
+	border-color: white;
+	display: none;
+}
+
+#coupe-3 {
+	transform: rotate(90deg) translateY(-200px);
+	display: none;
+}
+
+#coupe-4 {
+	border-color: white;
+	display: none;
+}
+
+#coupe-5 {
+	transform: rotate(180deg) translateX(-100px);
+	display: none;
+}
+
+#coupe-6 {
+	transform: rotate(180deg) translateX(0px) translateY(0px);
+	border-color: white;
+	display: none;
+}
+
+#coupe-7 {
+	transform: rotate(270deg) translateX(200px);
+	display: none;
+}
+
+/* /test camembert */
+
+
+#rectangle {
+	width: 200px;
+	height: 300px;
+	background-color: DarkOrange;
+}
+
+#rectangle {
+	width: 200px;
+	height: 300px;
+	background-color: DarkOrange;
+}
+
+#ellipse {
+	width: 250px;
+	height: 150px;
+	border-radius: 250px / 150px;	
+	background-color: DarkOrange;
+}
+
+#triangle {
+	border-top: 200px solid DarkOrange;
+	border-left: 200px solid transparent;
+	border-right: 200px solid transparent;
+}
+
+#corner {
+	border-bottom: 150px solid DarkOrange;
+	border-right: 150px solid transparent;
+	width: 0;
+	height: 0;
+}
+
+#parallelogram {
+	width: 300px;
+	height: 200px;
+	margin-left: 50px;
+	transform: skewX(20deg) skewY(20deg);
+}
+
+#star_of_david {
+	width: 0;
+	height: 0;
+	border-left: 100px solid transparent;
+	border-right: 100px solid transparent;
+	border-bottom: 150px solid CornflowerBlue;
+	position: relative;
+	background-color: transparent;
+}
+
+#star_of_david:after {
+	content: "";
+	width: 0;
+	height: 0;
+	border-left: 100px solid transparent;
+	border-right: 100px solid transparent;
+	border-top: 150px solid blue;
+	position: absolute;
+	top: 50px;
+	left: -100px;
+}
+
+#ruche {
+	width: 100px;
+	height: 55px;
+	background: red;
+	position: relative;
+	top: 50px;
+}
+
+#ruche:before {
+	content: "";
+	position: absolute;
+	top: -25px;
+	border-left: 50px solid transparent;
+	border-right: 50px solid transparent;
+	border-bottom: 25px solid DarkOrange;
+}
+
+#ruche:after {
+	content: "";
+	position: absolute;
+	bottom: -25px;
+	border-left: 50px solid transparent;
+	border-right: 50px solid transparent;
+	border-top: 25px solid blue;
+}
+
+#iris {
+	position: absolute;
+	border-radius: 50%;
+	background-color: red;
+	width: 30px;
+	height: 30px;
+	top: 25px;
+	left: 25px;
+}
+
+#oeil {
+	position: relative;
+	margin-left: 50px;
+}
+
+#oeil:before, #oeil:after {
+	content: "";
+	position: absolute;
+	width: 60px;
+	height: 60px;
+	border: 20px solid blue;
+	border-radius: 50px 20px 50px 50px;
+	transform: rotate(45deg);
+}
+
+#oeil:after {
+	border-radius: 50px 50px 50px 20px;
+	transform: rotate(225deg);
+}
+
+
+.cadre p {
+	clear: both; text-align: center; color: red; line-height: 0px; font-size: 2em;
+}
+
+.cadre {
+	clear: both;
+}
+
+#NorthKoreaFlag {
+	position: relative;
+	clear: both;
+	width: 888px;
+	height: 345px;
+	border-bottom: 50px solid blue;
+	border-top: 50px solid blue;
+	background-color: red;
+}
+
+#NorthKoreaFlag:before {
+	content: "";
+	position: absolute;
+	left: 203px;
+	top: 67px;
+	width: 205px;
+	height: 205px;
+	border-radius: 50%;
+	background-color: white;
+}
+
+#NorthKoreaFlag:after {
+	content: "";
+	position: absolute;
+	border-bottom: 18px solid white;
+	border-top: 18px solid white;
+	width: 887px;
+	height: 308px;
+	left: 0px;
+}
+
+
+#NKStar {
+	margin-top: 127px;
+	left: 200px;
+	height: 0;
+	width: 0;
+	position: relative;
+	border-bottom: 70px solid red;
+	border-right: 100px solid transparent;
+	border-left: 100px solid transparent;
+	transform: rotate(35deg);
+}
+#NKStar:before {
+	content: "";
+	position: absolute;
+	border-bottom: 80px solid red;
+	border-left: 30px solid transparent;
+	border-right: 30px solid transparent;
+	transform: rotate(-35deg);
+	top:-45px;
+	left: -65px;
+}
+
+#NKStar:after {
+	content: "";
+	position: absolute;
+	border-left: 95px solid transparent;
+	border-bottom: 70px solid red;
+	border-right: 100px solid transparent;
+	transform: rotate(-70deg);
+	top: 3px;
+	left: -105px;
+}
+
+#hotspot {
+	left: 250px;
+	clear: both;
+	position: relative;
+	margin-left: 50px;
+}
+
+#hotspot:before, #hotspot:after {
+	content: "";
+	position: absolute;
+	width: 60px;
+	height: 60px;
+	background-color: red;
+	border-radius: 50px 50px 0px 50px;
+	background-image: -webkit-linear-gradient(top, white, blue, black);
+	transform: rotate(45deg);
+}
+
+
+#pacman {
+	clear: both;
+	position: relative;
+	width: 0;
+	height: 0;
+
+	border: 60px solid DarkOrange;
+	border-right: 60px solid transparent;
+	border-radius: 60px;
+}
+
+#points {
+	position: relative;
+}
+
+#points:before {
+	content: "...";
+	position: absolute;
+	left: 30px;
+	top: -70px;
+	font-family: Arial;
+	font-size: 5em;
+	color: DarkOrange;
+}
+
+#oeilPacman {
+
+}
+
+#oeilPacman:before {
+
+}
+
+#triangleKN2 {
+	position: relative;
+	margin-top: -200px;
+	margin-left: -200px;
+	border-top: 200px solid orange;
+	border-left: 200px solid transparent;
+	border-right: 200px solid transparent;
+	transform: rotate(216deg);
+}
+
+#bubbleTchatQuestion {
+	clear: both;
+	position: relative;
+	background-color: DarkOrange;
+	width: 120px;
+	height: 80px;
+	border-radius: 10px;
+	margin-left: 50px;
+}
+
+#bubbleTchatQuestion:before {
+	content: "";
+	position: absolute;
+	top: 26px;
+	right: 100%;
+	border-top: 13px solid transparent;
+	border-right: 26px solid DarkOrange;
+	border-bottom: 13px solid transparent;
+}
+
+#bubbleTchatReponse {
+	background-color: CornFlowerblue;
+	clear: both;
+	position: relative;
+	width: 120px;
+	height: 80px;
+	border-radius: 10px;
+	margin-left: 50px;
+}
+#bubbleTchatReponse:before {
+	content: "";
+	position: absolute;
+	top: 26px;
+	left: 100%;
+	border-top: 13px solid transparent;
+	border-left: 26px solid CornFlowerblue;
+	border-bottom: 13px solid transparent;
+}
+
+#bubbleTchatReponse p, #bubbleTchatQuestion p {
+	text-align: center;
+}
+
+#explosion {
+	background: red;
+	width: 80px;
+	height: 80px;
+	position: relative;
+	margin: 50px;
+}
+#explosion:before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 80px;
+	width: 80px;
+	transform: rotate(45deg);
+	background-color: DarkOrange;
+}
+
+#etoile {
+	margin-left: 50px;
+	margin-top: 70px;
+	height: 0;
+	width: 0;
+	position: relative;
+	border-bottom: 70px solid red;
+	border-right: 100px solid transparent;
+	border-left: 100px solid transparent;
+	transform: rotate(35deg);
+}
+#etoile:before {
+	content: "";
+	position: absolute;
+	border-bottom: 80px solid blue;
+	border-left: 30px solid transparent;
+	border-right: 30px solid transparent;
+	transform: rotate(-35deg);
+	top:-45px;
+	left: -65px;
+}
+
+#etoile:after {
+	content: "";
+	position: absolute;
+	border-left: 95px solid transparent;
+	border-bottom: 70px solid DarkOrange;
+	border-right: 100px solid transparent;
+	transform: rotate(-70deg);
+	top: 3px;
+	left: -105px;
+}
+
+#blob {
+	background-color: white;
+	width: 80px;
+	height: 80px;
+	position: relative;
+	margin: 50px;
+}
+
+#blob:after, #blob:before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 80px;
+	height: 80px;
+	background-color: white;
+}
+
+#blob:before {
+	transform: rotate(30deg);
+}
+#blob:after {
+	transform: rotate(60deg);
+}
+
+#darty {
+	position: relative;
+	background-color: red;
+	width: 500px;
+	height: 500px;
+	line-height: 100%;
+}
+
+#darty:before {
+	position: absolute;
+	text-align: center;
+	font-size: 160px;
+	font-weight: 900;
+	font-family: arial;
+	line-height: 500px;
+	content: "DIRTY";
+	width: 500px;
+	height: 500px;
+	border-radius: 50%;
+	background-color: white;
+}
+
+#adidas {
+	position: relative;
+	background-color: white;
+	opacity: 0.5;
+	transform: rotate(180deg);
+	border: 1px solid blue;
+	height: 380px;
+	width: 75px;
+}
+
+#adidas:before {
+	position: absolute;
+	content: "";
+	background-color: black;
+	border-radius: 150px / 250px;
+	height: 380px;
+	width: 250px;
+}
+
+#adidas:after {
+	position: absolute;
+	background-color: white;
+	content: "";
+	height: 380px;
+	width: 1000px;
+	left: 75px;
+}
+
+#adidas2 {
+	position: relative;
+	background-color: white;
+	border: 1px solid blue;
+	height: 380px;
+	width: 75px;
+	left: 22px;
+}
+
+#adidas2:before {
+	position: absolute;
+	content: "";
+	background-color: black;
+	border-radius: 150px / 250px;
+	height: 380px;
+	width: 250px;
+}
+
+#adidas2:after {
+	position: absolute;
+	background-color: white;
+	content: "";
+	height: 380px;
+	width: 250px;
+	left: 75px;
+}
+
+#adidasB {
+	position: relative;
+	background-color: white;
+	opacity: 0.5;
+	transform: rotate(180deg);
+	border: 1px solid blue;
+	height: 380px;
+	width: 75px;
+}
+
+#adidasB:before {
+	position: absolute;
+	content: "";
+	background-color: black;
+	border-radius: 150px / 250px;
+	height: 380px;
+	width: 250px;
+}
+
+#adidasB:after {
+	position: absolute;
+	background-color: white;
+	content: "";
+	height: 380px;
+	width: 1000px;
+	left: 75px;
+}
+
+#adidasB2 {
+	position: relative;
+	background-color: white;
+	border: 1px solid blue;
+	height: 380px;
+	width: 75px;
+	left: 22px;
+}
+
+#adidasB2:before {
+	position: absolute;
+	content: "";
+	background-color: black;
+	border-radius: 150px / 250px;
+	height: 380px;
+	width: 250px;
+}
+
+#adidasB2:after {
+	position: absolute;
+	background-color: white;
+	content: "";
+	height: 380px;
+	width: 250px;
+	left: 75px;
+}
+/* faire plutôt des divs entières au lieu des after et before, qui ajoutent des blancs. Peut être qu'on aura plus à bidouiller avec l'aopacity. */
+/* transform-origin permet de positionner le point de trandformation, utile pour rotate */
+
+.cadre2 {
+	display: block;
+	transform: rotate(225deg);
+}
+
+.cadre
+
+/*#triangleKN2:before {
+	content: "";
+	top: -200px;
+	left: -200px;
+	position: absolute;
+	border-top: 200px solid violet;
+	border-left: 200px solid transparent;
+	border-right: 200px solid transparent;
+	transform: rotate(288deg);*/
+}

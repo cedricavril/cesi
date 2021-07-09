@@ -1,0 +1,49 @@
+body, html {
+	border: 0 none;
+	padding: 0;
+	margin: 0;
+	overflow: hidden;
+	font-family: arial;
+	background-color: #eee;
+}
+
+section #global {
+	position: absolute;
+	width: 960px;
+	left: 50%;
+	margin-left: -480px;
+	margin-top: 10px;
+	background-color: #fff;
+}
+
+nav {
+	width: 920px;
+	margin-left: 10px;
+	margin-right: 10px;
+	padding: 10px;
+}
+
+nav ul {
+	width: 920px;
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+
+nav ul li {
+	display: inline-block;
+	position: relative;
+	margin-right: 10px;
+}
+
+nav ul li a {
+	display: inline-block;
+	padding: 5px;
+	color: #fff;
+	background-color: rgba(61,145,223, 0.7);
+	text-decoration: none;
+}
+
+nav ul li:hover a {
+	transform: scale(1.7);
+}

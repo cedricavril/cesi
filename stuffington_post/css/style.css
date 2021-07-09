@@ -1,0 +1,66 @@
+@font-face {
+	font-family: 'caouboy';
+	src: url('Drifttype.ttf') format('truetype');
+}
+
+html, body {
+	width: 1500px;
+	margin: auto;
+}
+
+header h1 {
+	font-family: 'caouboy';
+	text-align: center;
+}
+
+header p {
+	float: left;
+	background-color: grey;
+	height: 100px;
+	width: 100px;
+}
+
+header #pub {
+
+}
+
+header p {
+	width: 250px;
+}
+
+header p img {
+	height: inherit;
+	float: right;
+}
+header #centre {
+	width: 997px;
+	border-left: 1px solid white;
+	border-right: 1px solid white;
+	text-align: center;
+}
+
+header #centre img {
+	float: none;
+}
+
+header nav {
+	clear: both;
+	width: 100%;
+	background-color: 
+	height: 20px;
+	border-bottom: 1px solid grey;
+}
+
+header nav ul {
+	list-style-type: none;
+}
+header nav ul li a {
+	text-transform: uppercase;
+	text-decoration: none;
+}
+
+header nav ul li {
+	font-family: caouboy;
+	display: inline;
+	padding-right: 95px;
+}

@@ -1,0 +1,20 @@
+<html>
+<head>
+	<title>évènements : captures de position de curseur de la souris </title>
+	<meta charset="utf-8">
+</head>
+<body>
+
+<div id="position"></div>
+
+
+<script>
+	var pos = document.getElementById('position');
+
+	document.addEventListener('mousemove', function(e){
+		pos.innerHTML = e.clientX + "px pour l'abscisse";
+	});
+
+</script>
+</body>
+</html>

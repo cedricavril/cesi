@@ -1,0 +1,182 @@
+/********************** Les pseudo-classes **********************/
+/* Les pseudo-classes sont symbolisées avec les deux points : */ 
+a:link {}
+a:visited {}
+a:hover {
+	border-bottom: 1px;
+}
+
+/* Lorsque le lien est en surbrillance, grâce à la touche tabulation par exemple */
+a:focus {} 
+
+/* Before et After ajoutent un contenu visuel ou un espace devant et/ou après l'élément ciblé */
+a:before
+a:after
+
+/* Les pseudo-classes peut s'utiliser ailleurs que les ancres */
+div:hover{
+	background: #e1e1e1;
+}
+
+/* Sélectionne tous les div sauf content */
+div:not(#content) {
+	color: black;
+}
+
+/* Le target cible les liens ancres, c'est-à-dire des liens inclus dans une même page */
+/* Exemple HTML : 
+	<a href="#cible">Allez à la cible</a>
+	
+	<p>Lorem Ipsum Dolor sit amet</p>
+	<p>Lorem Ipsum Dolor sit amet</p>
+	<p>Lorem Ipsum Dolor sit amet</p>
+	
+	<div id="cible"><h1>Titre</h1></div>
+*/
+#cible:target {
+	background: yellow;
+}
+
+/* :any regroupe des éléments HTML pour éviter la répétition du code CSS */
+header nav li a:any(:hover, :focus, :visited) {
+	color: red;
+}
+/* Celle de Firefox */
+:-moz-any(section, article, aside, nav) h1 {
+  font-size: 15px;
+}
+/* Pour les classes */ 
+.content :any(p, ul, blockquote, article) {
+	margin-left: 10px;
+}
+
+
+
+
+
+/****  Les frères antérieurs, ou tilde, ou encore adjacent direct !  ****/
+/* ~ ALTGR + 2 */
+/* Ici, tous les contenus2 frères de contenu1 seront ciblés */
+contenu1 ~ contenu2 {
+	font-size: 18px;
+}
+/* Idem pour les paragraphes suivants les h3 */
+h3 ~ p {
+	text-align: justify;
+}
+/* Tous les li survolés */
+li:hover ~ li {
+	opacity: 0.7;
+}
+/* Avec les input également */
+input[type="submit"] ~ input {
+   margin-left: 5px;
+}
+
+
+
+
+
+
+
+/********************** La relation parent-enfant ! **********************/
+/* Cible les éléments précis d'une liste */
+/* Les valeurs (5), (4), (N)... ciblent le cinquième, sixième etc. élément enfant de la liste */
+/* 6n cible tous les sixièmes éléments enfants des listes */
+li:nth-child(5) {
+	color: blue;
+}
+li:nth-child(6) {
+	color: blue;
+}
+/* Pareil mais pour les derniers enfants */
+li:nth-last-child(2) {
+	color: blue;
+}
+/* Pareil avec le type d'élément et non pas l'enfant */
+/* Ici la quatrième ul sera orange avec une bordure rouge solide de 2 pixels */
+ul:nth-of-type(4) {
+	color:orange;
+	border: 2px solid red;
+}
+/* Pareil mais avec les derniers éléments types */
+ul:nth-last-of-type(1) {
+	border-bottom: 1px solid grey;
+}
+/* Cible le premier enfant du parent */
+ul > li:first-child {
+ border-top: none;
+}
+/* Cible le dernier enfant du parent */
+ul > li:last-child {
+ border-bottom: green;
+}
+/* Peu utilisé, cible le seul enfant du parent */
+/* Ici, le premier paragraphe du div sera bleu, mais pas les suivants */
+div p:only-child {
+	color: blue;
+}
+/* Cible les éléments sans aucun frère dans le même conteneur */
+li:only-of-type {
+ font-weight: bold;
+ font-size: 18px;
+}
+ul > li:only-of-type {
+ font-weight: bold;
+ font-size: 18px;
+}
+/* Sélectionne les premiers frères d'un certain type */
+/* Ici, on sélectionne la première liste ul et son deuxième enfant */
+ul:first-of-type > li:nth-child(2) {
+ font-weight: bold;
+}
+/* Variante avec le sélecteur adjacent, contraire de l'adjacent indirect tilde ~ */
+p + ul li:last-child {
+ font-weight: bold;
+}
+
+
+
+
+
+/********************** Et maintenant les hacks CSS ! **********************/
+/* Important : les pseudo-classes peuvent s'utiliser avec plusieurs éléments, pas que les liens */
+/* Le hack CSS clearfix gère le débordement des éléments d'un div */
+.clearfix:after {
+  content: "";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  font-size: 0;
+  height: 0;
+  }
+  /* Et pour IE6 à 9
+.clearfix {
+ *display: inline-block;
+ _height: 1%;
+}
+.clearfix {
+	overflow: auto;
+	zoom: 1;
+}
+*/
+
+
+
+
+
+
+/********************** Et pour finir les pseudoElement ! **********************/
+/* Symbolisés par les double deux points :: et mettent en forme une ou des parties d'un élément */
+p::first-line {
+ font-weight: thinner;
+ font-size: 12px;
+}
+/* Une lettrine, première lettre de paragraphe */
+p::first-letter {
+ float: left;
+ font-size: 2em;
+ font-weight: bold;
+ font-family: cursive;
+ padding-right: 2px;
+}

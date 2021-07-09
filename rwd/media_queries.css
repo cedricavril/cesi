@@ -1,0 +1,106 @@
+/* Les media queries en CSS adaptent le contenu au contenant, sans changer leur aspect */
+/* Elles envoient un message direct au navigateur sur la manière d'afficher les éléments en fonction du périphérique utilisé */
+/* Elles sont très répandues dans le web responsive et les animations 2d */
+/* Il est donc très utile de spécifier le type de navigateur avec la syntaxe suivante : */
+/****
+-webkit-
+-moz-
+-o-
+-ms-
+****/
+
+/* Quelques exemples */
+/* Important : les éléments CSS sont toujours inclus dans les accolades du media query */
+/* Les éléments min-width, max-width, max-height, min-height, indiquent les tailles maximum ou minimum pour appliquer la mise en forme */
+/* Important : les opérateurs logiques sont au nombre de 4 : and, not, only et virgule (ou) */
+/*****
+and: lie plusieurs conditions
+only: cache le media query aux vieux navigateurs
+ou (,): le navigateur analyse les requêtes individuellement
+not: inverse les conditions, peu utilisé
+*****/
+
+/* Pour tout type de media, fenêtres, écrans, tv... */
+@media all {
+	.section {
+		margin: auto;
+		width: 100%;
+		font-size: 1em;
+	}
+}
+/* Pour les médias écrans uniquement */
+@media only screen (max-device-width: 400px) {
+	 body {
+		background-color:black;
+		color:white;
+		font-size: 1em;
+		width: 50%;
+	}
+}
+/* Pour les écrans télé full HD */
+/* Dimensions et type de balayage scan */
+@media tv (max-device-width: 3840px) and (min-device-width: 1366px) and (scan: progressive) {
+	
+}
+
+/* Variante pour les médias écrans larges et réduits */
+@media screen and (device-aspect-ratio: 16/9), screen and (device-aspect-ratio: 4/3), screen and (...) {
+	body {
+		...
+	}
+}
+
+
+
+
+/* Pour les écrans de mêmes dimensions */
+@media screen (min-aspect-ratio: 1/1) {}
+
+
+
+
+/* Pour la gestion des hauteurs de fenêtre */
+@media screen (min-device-height: 100px) {}
+@media screen (max-device-height: 799px) {}
+
+
+/* Pour l'impression */
+/* On fixe une taille et une bonne résolution */
+@media print {
+	.page { 
+		width:100%;
+		font-size:12pt; 
+	}
+}
+@media print and (min-resolution: 150dpi) {
+	.page {
+		width: 100%;
+	}
+}
+
+/* Pour les médias en général, mais spécifie s'il s'agit de bitmap ou de grille vectorielle */
+/* Le navigateur affichera le contenu le plus pertinent en fonction du périphérique */
+@media grid (max-width: 15em) and (max-height: 30em) {}
+
+
+
+/* Pour les deux types d'orientations possibles : paysage et portrait */
+@media (min-width: 600px) and (orientation: landscape) {}
+@media (min-width: 300px) and (orientation: portrait) {}
+
+
+
+/* On peut aller plus loin et cibler les couleurs du périphérique */
+/* La couleur web étant constituée de bits, le style indiquera le nombre de bits par couleur */
+@media all and (color), (min-color: 4) {
+	body {
+		font-color: red;
+		font-size: 15em;
+	}
+}
+@media all and (min-color-index: 256) {
+	body {
+		font-color: red;
+		font-size: 15em;
+	}
+}

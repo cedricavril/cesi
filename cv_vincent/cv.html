@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8" />
+<title>Curriculum vitae</title>
+<!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">-->
+<link rel="stylesheet" href="paper.css">
+<!--
+Après plusieurs essais, nous choisissons d'utiliser comme rythme *vertical* le ratio 16/15, soit 1.067.
+Comme rythme *horizontal*, nous optons pour la racine carrée de deux qui correspond à la proportion d'une feuille de papier au format A4.
+Nous fixons empiriquement la taille de h1 et de h2. Nous voulons que les deux titres s'affichent sans coupure de lignes. Lorsque la taille est déterminée, nous appliquons la valeur la plus proche proposée par l'échelle 15/16. 
+-->
+<style>
+	:root {
+		/* https://www.materialpalette.com/deep-orange/teal */
+		--dark-primary-color: #e64a19; 
+		--primary-color: #ff5722;
+		--accent-color: #009688;
+		--primary-color-text: #212121;
+		/* Vertical rythm: 1.067 */
+		/* Horizontal rythm */
+		--page-scale: 1.41421;
+		--page-scale-power-zero: 1;
+		--page-scale-power-inverse-two: 0.5;
+		--page-scale-power-inverse-four: 0.25;
+		--page-scale-power-three: 2.828;
+		--page-scale-power-six: 8;
+		--h3-offset: calc(
+						calc(
+							calc(1.793 + calc(1.793 * 1.296))
+							-
+							calc(1.383 + calc(1.383 * 1.296))
+						)
+						/
+						2
+						);
+	}
+	/* Reset */
+	h1, h2, h3, h4, h5, ul {
+		font-weight: normal;
+		font-style: normal;
+		margin: 0;
+		padding: 0;
+	}
+	ul {
+		list-style-type: none;
+	}
+	/* Layout */
+	html {
+		box-sizing: border-box;
+	}
+	*, *:before, *:after {
+		box-sizing: inherit;
+	}
+	@page {
+		size: A4;
+	}
+	article {
+		display: grid;
+		grid-column-gap: calc(var(--page-scale-power-inverse-two) * 1rem);
+	}
+	.first article {
+		grid-template-columns: 33% calc(var(--page-scale-power-inverse-four) * 1rem) 1fr;
+	}
+	.second article {
+		grid-template-columns: 1fr calc(var(--page-scale-power-inverse-four) * 1rem) 33%;
+	}
+	.column:nth-child(2) {
+		background-color: var(--primary-color);
+	}
+	/* Font */
+	@font-face {
+		font-family: 'Linux Libertine';
+		src: url('libertine/LinLibertine_Rah.ttf') format('truetype');
+	}
+	@font-face {
+		font-family: 'Linux Libertine Bold';
+		src: url('libertine/LinLibertine_RBah.ttf') format('truetype');
+	}
+	@font-face {
+		font-family: 'Linux Libertine Italic';
+		src: url('libertine/LinLibertine_RIah.ttf') format('truetype');
+	}
+	@font-face {
+		font-family: 'Linux Libertine Bold Italic';
+		src: url('libertine/LinLibertine_RBIah.ttf') format('truetype');
+	}
+	@font-face {
+		font-family: 'Linux Libertine Semi Bold';
+		src: url('libertine/LinLibertine_RZah.ttf') format('truetype');
+	}
+	html {
+		font-family: 'Linux Libertine';
+	}
+	h1, h2, h3, strong {
+		font-family: 'Linux Libertine Bold';
+	}
+	h4 {
+		font-family: 'Linux Libertine Semi Bold';
+	}
+	h5 {
+		font-family: 'Linux Libertine Bold Italic';
+	}
+	em {
+		font-family: 'Linux Libertine Italic';
+	}
+	em strong {
+		font-family: 'Linux Libertine Bold Italic';
+		font-style: italic;
+	}
+	/* Typography */
+	html {
+		color: var(--primary-color-text);
+		font-size: 96%;
+		line-height: 1.296;
+		/* https://developer.mozilla.org/fr/docs/Web/CSS/text-rendering */
+		text-rendering: optimizeLegibility;
+		/* https://developer.mozilla.org/fr/docs/Web/CSS/font-smooth */
+		-webkit-font-smoothing: antialiased;
+	}
+	h1 {
+		/*font-size: 1.829rem;*/
+		font-size: 1.793rem;
+	}
+	h2 {
+		/*font-size: 1.486rem;*/
+		font-size: 1.476rem;
+	}
+	h1, .first .column:last-of-type h3, .second .column:first-of-type h3 {
+		color: var(--accent-color);
+	}
+	.first .column:last-of-type h3:first-of-type {
+		margin-top: calc(var(--h3-offset) * 1rem);/* 0.47068 */
+	}
+	h3 {
+		font-size: 1.383rem;
+	}
+	h4 {
+		font-size: 1.138rem;
+	}
+	h5 {
+		font-size: 1rem;
+	}
+	.slogan { 
+		margin: 1.296rem auto 1.296rem auto;
+	}
+	.slogan h3 {
+		color: var(--accent-color);
+	}
+	.slogan ul {
+		font-family: 'Linux Libertine Semi Bold';
+		font-size: 1.138rem;
+		margin-top: 1.067rem;
+	}
+	.slogan li:before { 
+		content: "\21CB\A0"; 
+		color: var(--primary-color);
+	}
+	ul.inline li {
+		display: inline; 
+	}
+	ul.inline li:nth-child(n + 2)::before {
+		content: "\2192\A0";
+	}
+	.assets h5 {
+		margin-left: calc(var(--page-scale-power-zero) * 1rem);
+	}
+	.assets ul {
+		list-style-type: disc;
+		margin-left: calc(var(--page-scale-power-zero) * 1rem);
+		padding-left: calc(var(--page-scale-power-zero) * 1rem);
+	}
+	.second .column:last-of-type li {
+		text-align: right;
+	}
+	q {
+		quotes: "\AB\202F" "\202F\BB" "\201C" "\201D" "\2018" "\2019";
+	}
+	q:before {
+		content: open-quote;
+	}
+	q:after {
+		content: close-quote;
+	}
+	.center {
+		text-align: center;
+	}
+	.title {
+		font-family: 'Linux Libertine Semi Bold';
+	}
+	.ornament {
+		font-family: 'Linux Libertine Bold';
+		text-align: right;
+	}
+	a {
+		color: var(--accent-color); 
+		font-family: 'Linux Libertine Semi Bold';
+		text-decoration: none;
+	}
+	/* Utility */
+	.visual-helper {
+		word-break: break-all;
+	}
+	/* Canvas */
+	.logotype {
+		height: auto;
+		margin: 1.296rem auto 1.296rem auto;
+		width: calc(var(--page-scale-power-six) * 1rem);
+	}
+	.picture {
+		height: auto;
+		margin: 1.296rem auto 0 auto;
+		width: calc(var(--page-scale-power-three) * 1rem);
+	}
+</style>
+</head>
+<body class="A4">
+	<section class="sheet padding-20mm first">
+		<article>
+			<div class="column visual-helper">
+				<h1 class="center">DÉVELOPPEUR MULTIMEDIA</h1>
+				<div class="logotype">
+					<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" fill="#e64a19" viewBox="0 0 24 24"><path d="M21.82,15.42L19.32,19.75C18.83,20.61 17.92,21.06 17,21H15V23L12.5,18.5L15,14V16H17.82L15.6,12.15L19.93,9.65L21.73,12.77C22.25,13.54 22.32,14.57 21.82,15.42M9.21,3.06H14.21C15.19,3.06 16.04,3.63 16.45,4.45L17.45,6.19L19.18,5.19L16.54,9.6L11.39,9.69L13.12,8.69L11.71,6.24L9.5,10.09L5.16,7.59L6.96,4.47C7.37,3.64 8.22,3.06 9.21,3.06M5.05,19.76L2.55,15.43C2.06,14.58 2.13,13.56 2.64,12.79L3.64,11.06L1.91,10.06L7.05,10.14L9.7,14.56L7.97,13.56L6.56,16H11V21H7.4C6.47,21.07 5.55,20.61 5.05,19.76Z" /></svg>
+				</div>
+				<h2 class="center">Vincent Top&#x2011;Roulet</h2>
+				<div class="slogan">
+					<h3>Compétences</h3>
+					<ul>
+						<li>Techniques</li>
+						<li>Rédactionnelles</li>
+					</ul>
+				</div>
+				<ul>
+					<li>
+						<h3>Adresse</h3>
+						<ul>
+							<li>Appartement 173</li>
+							<li>Résidence Le Pauillac</li>
+							<li>36, allée Haussmann</li>
+							<li>33300 Bordeaux</li>
+						</ul>
+					</li>
+					<li>
+						<h3>Contact</h3>
+						<ul>
+							<li>06.48.71.64.53</li>
+							<li><a href="mailto:vincent.roulet@protonmail.com">vincent.roulet@protonmail.com</a></li>
+						</ul>
+					</li>
+					<li>
+						<h3>Notes</h3>
+						<ul>
+							<li>Né le 29 février 1968 à Bordeaux</li>
+							<li>Nationalité française</li>
+							<li>Célibataire</li>
+							<li>Titulaire du permis de conduire <q>B</q></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+			<div class="column"></div>
+			<div class="column">
+				<h3>Expériences professionnelles</h3>
+				<ul>
+					<li class="entry">
+						<h4>Depuis 2003</h4>
+						<ul>
+							<li class="title">Développeur et concepteur multimedia indépendant</li>
+							<li class="assets">
+								<h5>J&#x2019;ai conçu&#x2026;</h5>
+								<ul>
+									<li><em>Bordeaux Info</em>, fil d&#x2019;informations à partir de données d&#x2019;origine source ouverte qui compte 10 000 articles optimisés pour le référencement, écrits dans le respect des normes typographiques, littéraires et techniques&#x202F;;</li>
+									<li><em>Iptima</em>, suivi d&#x2019;hospitalisation à domicile&#x202F;;</li>
+									<li><em>Observance</em>, rappel par Sms de l&#x2019;heure de prise de traitement&#x202F;;</li>
+									<li><em>Panacée</em>, comparateur de prix entre officines des médicaments.</li>
+								</ul>
+								<h5>J&#x2019;utilise&#x2026;</h5>
+								<ul>
+									<li>JavaScript de préférence à JQuery&#x202F;;</li>
+									<li>Css avec les pré-processeurs Sass, Less, PostCSS-cssnext&#x202F;;</li>
+									<li>Html&#x202F;;</li>
+									<li>Php&#x202F;;</li>
+									<li>MySql&#x202F;;</li>
+									<li>WordPress (j&#x2019;ai développé des thèmes, des extensions puis participé aux forums de suport, notamment en anglais)&#x202F;;</li>
+									<li>Apache, Nginx, lighttpd pour administrer des serveurs Web, de l'installation à la maintenance.</li>
+								</ul>
+								<h5>Je m&#x2019;intéresse aujourd&#x2019;hui&#x2026;</h5>
+								<ul>
+									<li>à l&#x2019;accessibilité (c&#x2019;est-à-dire permettre aux utilisateurs d&#x2019;accéder à un contenu quels que soient le navigateur ou la connexion)&#x202F;;</li>
+									<li>à l&#x2019;envoi de mails enrichis&#x202F;;</li>
+									<li>à la recherche (mes travaux portent sur la génération de documents destinés la publication en Pdf grâce à Html et à JavaScript)&#x202F;;</li>
+									<li>à la monnaie électronique et à la Blockchain.</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+					<li class="entry">
+						<h4>De 1999 à 2000</h4>
+						<ul>
+							<li class="title">Formateur en informatique médicale</li>
+							<li>
+								<ul class="inline">
+									<li>Medialog</li>
+									<li>Mérignac</li>
+								</ul>
+							</li>
+							<li class="assets">
+								<h5>J&#x2019;assure&#x2026;</h5>
+								<ul>
+									<li>la formation en présentiel de secrétaires et de médecins&#x202F;;</li>
+									<li>le conseil à l&#x2019;équipe de dévoloppement grâce à mon expertise <q>métier</q>&#x202F;;</li>
+									<li>l'assistance par téléphone.</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+					<li class="entry">
+						<h4>De 1997 à 1999</h4>
+						<ul>
+							<li class="title">Responsable de l&#x2019;information médicale</li>
+							<li>
+								<ul class="inline">
+									<li>Clinique La Terrasse</li>
+									<li>Bergerac</li>
+								</ul>
+							</li>
+							<li class="assets">
+								<h5>J&#x2019;assure&#x2026;</h5>
+								<ul>
+									<li>l&#x2019;évaluation médico-économique en lieu et place d&#x2019;un médecin&#x202F;;</li>
+									<li>la maintenance du parc informatique et l&#x2019;assistance aux utilisateurs&#x202F;;</li>
+									<li>le pilotage de la qualité, par exemple la lutte contre les infections nosocomiales.</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+					<li class="ornament">&#x2026;&#x2005;/&#x2005;&#x2026;</li>
+				</ul>
+			</div>
+		</article>
+	</section>
+	<section class="sheet padding-20mm second">
+		<article>
+			<div class="column">
+				<ul>
+					<li class="entry">
+						<h4>De 1995 à 1997</h4>
+						<ul>
+							<li class="title">Consultant pour l&#x2019;industrie pharmaceutique</li>
+							<li>
+								<ul class="inline">
+									<li>Laboratoires Fournier</li>
+									<li>Dijon</li>
+								</ul>
+							</li>
+							<li class="assets">
+								<h5>J&#x2019;assure&#x2026;</h5>
+								<ul>
+									<li>le monitorage d&#x2019;une étude clinique multicentrique de phase <q>IV</q>.</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+					<li class="entry">
+						<h4>De 1993 à 1995</h4>
+						<ul>
+							<li class="title">Attaché de recherche clinique</li>
+							<li>
+								<ul class="inline">
+									<li>Inserm U 330 &#x2013; Département d&#x2019;Information Médicale</li>
+									<li>Université de Bordeaux II</li>
+								</ul>
+							</li>
+							<li class="assets">
+								<h5>J&#x2019;assure&#x2026;</h5>
+								<ul>
+									<li>le codage et l&#x2019;analyse d&#x2019;informations pharmaco-épidémiologiques.</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+					<li class="entry">
+						<h4>De 1991 à 1992</h4>
+						<ul>
+							<li class="title">Délégué à l&#x2019;information médicale</li>
+							<li>
+								<ul class="inline">
+									<li>Cider</li>
+									<li>Paris</li>
+								</ul>
+							</li>
+							<li class="assets">
+								<h5>J&#x2019;assure&#x2026;</h5>
+								<ul>
+									<li>la promotion de médicaments auprès du corps médical.</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+				</ul>
+				<h3>Formation</h3>
+				<ul>
+					<li class="entry"><h4>2003</h4>
+						<ul>
+							<li>Préparation du Troisième Concours d&#x2019;entrée à l&#x2019;École Nationale d&#x2019;Administration</li>
+						</ul>
+					</li>
+					<li class="entry"><h4>2002</h4>
+						<ul>
+							<li>Stage de chef de projet en conception de systèmes informatiques</li>
+							<li>
+								<ul class="inline">
+									<li>Aquitcom</li>
+									<li>Libourne</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+					<li class="entry"><h4>1995</h4>
+						<ul>
+							<li>Stages d&#x2019;évaluation de la qualité en médecine et de statistiques appliquées à la médecine</li>
+						</ul>
+					</li>
+					<li class="entry"><h4>1993</h4>
+						<ul>
+							<li class="title">Diplôme Inter&#x2011;Universitaire <q>Formation des Assistants de Recherche Clinique</q> <em>(niveau <q>II</q> du Ministère de l&#x2019;Éducation Nationale)</em></li>
+							<li>
+								<ul class="inline">
+									<li>Université de Bordeaux II</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+					<li class="entry"><h4>1990</h4>
+						<ul>
+							<li class="title">Diplôme de délégué à l&#x2019;information médicale <em>(niveau <q>III</q> du Ministère de l&#x2019;Éducation Nationale)</em></li>
+							<li>
+								<ul class="inline">
+									<li>Insecom</li>
+									<li>Les Ulis</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+			<div class="column"></div>
+			<div class="column">
+				<div class="picture">
+					<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"  fill="#e64a19" viewBox="0 0 24 24"><path d="M10.59,13.41C11,13.8 11,14.44 10.59,14.83C10.2,15.22 9.56,15.22 9.17,14.83C7.22,12.88 7.22,9.71 9.17,7.76V7.76L12.71,4.22C14.66,2.27 17.83,2.27 19.78,4.22C21.73,6.17 21.73,9.34 19.78,11.29L18.29,12.78C18.3,11.96 18.17,11.14 17.89,10.36L18.36,9.88C19.54,8.71 19.54,6.81 18.36,5.64C17.19,4.46 15.29,4.46 14.12,5.64L10.59,9.17C9.41,10.34 9.41,12.24 10.59,13.41M13.41,9.17C13.8,8.78 14.44,8.78 14.83,9.17C16.78,11.12 16.78,14.29 14.83,16.24V16.24L11.29,19.78C9.34,21.73 6.17,21.73 4.22,19.78C2.27,17.83 2.27,14.66 4.22,12.71L5.71,11.22C5.7,12.04 5.83,12.86 6.11,13.65L5.64,14.12C4.46,15.29 4.46,17.19 5.64,18.36C6.81,19.54 8.71,19.54 9.88,18.36L13.41,14.83C14.59,13.66 14.59,11.76 13.41,10.59C13,10.2 13,9.56 13.41,9.17Z" /></svg>
+				</div>
+				<ul>
+					<li>Github (<em>à parfaire</em>), <a href="https://gist.github.com/384400">https://gist.github.com/384400</a></li>
+				</ul>
+				<div class="picture">
+					<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"  fill="#e64a19" viewBox="0 0 24 24"><path d="M18,4V3A1,1 0 0,0 17,2H5A1,1 0 0,0 4,3V7A1,1 0 0,0 5,8H17A1,1 0 0,0 18,7V6H19V10H9V21A1,1 0 0,0 10,22H12A1,1 0 0,0 13,21V12H21V4H18Z" /></svg>
+				</div>
+				<ul>
+					<li>Curriculum vitæ mis à jour le 26 décembre 2016, conçu en Html, notamment avec les fonctionnalités expérimentales CSS Grid Layout, CSS Custom Properties for Cascading Variables et la propriété calc() de CSS Values and Units.</li>
+				</ul>
+			</div>
+		</article>
+	</section>
+</body>
+</html>

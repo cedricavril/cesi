@@ -1,0 +1,24 @@
+body{
+/*    background:#eee;*/
+}
+#public-cv{
+/*    width:21cm;
+    margin:0 auto;
+    padding-top:25px;*/
+}
+#public-cv .cv-page{
+/*    box-shadow:2px 2px 12px #bbb;
+    margin-bottom:25px;
+    height:29.7cm;
+    background-color:#fff;
+    overflow: hidden;*/
+}
+#public-cv .cv-page:before,
+#public-cv .cv-page:after {
+    content: "";
+    display: table;
+}
+#public-cv .cv-page:after{
+    clear: both;
+}
+

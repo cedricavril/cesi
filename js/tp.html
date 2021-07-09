@@ -1,0 +1,40 @@
+<!-- mauvaise soluce car les boutons radios sont pas des checkbox -->
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="TP age">
+	<title>TP age</title>
+</head>
+<body>
+	<form id="formulaire">
+		<p>capitale de la France : 
+		<input type="radio" name="solution" id="solution" value="Paris">Paname</input>
+		<input type="radio" name="solution" id="solution" value="Rome">Rome</input>
+		<input type="radio" name="solution" id="solution" value="Tachkent">Tachkent</input></p>
+
+		<p>capitale de l'Italie : 
+		<input type="radio" name="solution" id="solution" value="Paris">Paname</input>
+		<input type="radio" name="solution" id="solution" value="Rome">Rome</input>
+		<input type="radio" name="solution" id="solution" value="Tachkent">Tachkent</input></p>
+
+		<p>capitale de l'Ouzbekistan : 
+		<input type="radio" name="solution" id="solution" value="Paris">Paname</input>
+		<input type="radio" name="solution" id="solution" value="Rome">Rome</input>
+		<input type="radio" name="solution" id="solution" value="Tachkent">Tachkent</input></p>
+	</form>
+	<input type="button" value="Verdict" onclick="verdict(formulaire.solution);">
+	<script>
+		var soluce = "";
+		function verdict(choix) {
+			if(!choix[0].checked) soluce += "La capitale de la France est Paname\n";
+			if(!choix[4].checked) soluce += "La capitale de l'Italie est Rome\n";
+			if(!choix[8].checked) soluce += "La capitale de l'Ouzbekistan est Tachkent\n";
+
+			if(!soluce) soluce = "Gagné.\n";
+			else alert("Perdu.\n"+soluce);
+		}
+	</script>
+</body>
+</html>
+

@@ -1,0 +1,34 @@
+<html>
+<head>
+	<title>évènements : clavier</title>
+	<meta charset="utf-8">
+</head>
+<body>
+
+	<input type="text" name="" id="clavier">
+
+	<div style="border: 1px solid red; width: 100px; height: 100px;" id="appui"></div>
+	<div style="border: 1px solid green; width: 100px; height: 100px;" id="relache"></div>
+	<div style="border: 1px solid violet; width: 100px; height: 100px;" id="frappe"></div>
+
+<script>
+var appui = document.getElementById('appui'),
+	clavier = document.getElementById('clavier'),
+	relache = document.getElementById('relache'),
+	frappe = document.getElementById('frappe');
+
+clavier.addEventListener('keydown', function(e){
+	appui.innerHTML = "keydown : " + e.keyCode;
+});
+
+clavier.addEventListener('keyup', function(e){
+	relache.innerHTML = "keyup : " + e.keyCode;
+});
+
+clavier.addEventListener('keypress', function(e){
+	frappe.innerHTML = "keypress : " + e.keyCode;
+});
+
+</script>
+</body>
+</html>

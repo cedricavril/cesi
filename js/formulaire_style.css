@@ -1,0 +1,30 @@
+body {
+	background-color: black;
+}
+fieldset {
+	background-color: grey;
+	background-color: #005500;
+	margin: 0 auto;
+	border: 2px solid black;
+	border-radius: 10px;
+	width: 50%;
+	box-shadow: 0px 0px 5px 10px rgb(0,0,0,0.5), inset 0px 0px 5px 10px black;
+	text-shadow: 2px 2px rgb(0,0,0,0.5);
+	font-size: 2em;
+}
+fieldset legend {
+	color: blue;
+	font-weight: bold;
+}
+fieldset form p {
+	text-align: center;
+}
+
+fieldset form label {
+	font-size: 0.7em;
+}
+
+fieldset form label#labelVilles, fieldset form #villes {
+	display: none;
+}
+

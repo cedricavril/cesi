@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="FR-fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="description" content="exemple de mouseover et mouseout">
+    <meta name="author" content="pas moi">
+    <meta charset="utf-8">
+    <title>Test entrée-sortie</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+  <body>
+    <div id="myDiv">
+      <div>Texte 1</div>
+      <div>Texte 2</div>
+      <div>Texte 3</div>
+      <div>Texte 4</div>
+    </div>
+
+    <div id="results"></div>
+
+    <script>
+      var myDiv = document.getElementById('myDiv'),
+          results = document.getElementById('results'),
+      ecrireMessage = function(e, message){
+        var relatedTarget = e.relatedTarget;
+
+          // ci dessous : évite la répétition du message lors du parcours des divs enfants ou parents dans le div ciblé en remplaçant la cible par sa cible parente (ici body);
+          while (relatedTarget != myDiv && relatedTarget.nodeName != 'BODY' && relatedTarget != document) {
+            relatedTarget = relatedTarget.parentNode;
+          }
+          if (relatedTarget != myDiv) {
+            results.innerHTML += message;
+          }
+      };
+
+      myDiv.onmouseover = function(e) {
+          ecrireMessage(e, "Le curseur vient d'entrer !!<br />");
+      };
+
+      myDiv.onmouseout = function(e) {
+          ecrireMessage(e, "Le curseur vient de sortir !!<br />");
+      };
+    </script>
+  </body>
+</html>

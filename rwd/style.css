@@ -1,0 +1,17 @@
+.repeatingPattern {
+     background: url(Img/mon-image.png) repeat;
+     background-size: 114px 114px;
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2) {
+     .repeatingPattern {
+          background: url(Img/mon-image@2x.png) repeat;
+     }
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5), /* Chrome, Safari, Gecko */
+ only screen and (-o-min-device-pixel-ratio: 3/2), /* Opera  */
+ only screen and (min--moz-device-pixel-ratio: 1.5), /* Mozilla */
+ only screen and (min-device-pixel-ratio: 1.5)  /* Explorer, Edge */ {
+
+ }

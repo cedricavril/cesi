@@ -1,0 +1,37 @@
+body, html {
+	border: 0 none;
+	padding: 0;
+	margin: 0;
+}
+
+h1 {
+/*	font-family: Arial, Helvetica, sans-serif;*/
+	font-family: 'Franklin Gothic';
+	font-family: 'Pathway Gothic One', serif;
+}
+
+h2, section p {
+	font-family: arial;
+}
+
+section {
+	margin: auto;
+	width: 640px;
+	text-align: center;
+	padding: 10px;
+
+}
+
+/* pseudo éléments */
+p::first-line {
+ font-weight: thinner;
+ font-size: 12px;
+}
+/* Une lettrine, première lettre de paragraphe */
+p::first-letter {
+ float: left;
+ font-size: 2em;
+ font-weight: bold;
+ font-family: cursive;
+ padding-right: 2px;
+}

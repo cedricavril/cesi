@@ -1,0 +1,11 @@
+/* or, a l'air de marcher simultanément pour ff et ie avec copie de ci dessous avec local('?') pour ff (Cf. livredor.css) - à tester */
+@font-face { /* si pb utiliser truetype */
+	font-family: 'RDean';
+	src: local('☺'), url('../fonts/ERASBD.woff') format('woff'), url('../fonts/HouschkaPro-Light.svg') format('svg');
+	src: url('../fonts/Dean.eot');
+	font-weight: normal;
+	font-style: normal;
+}
+body {
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='black', endColorstr='#40BB51',GradientType=0 ); /* IE6-9 */
+}

@@ -1,0 +1,20 @@
+<html>
+<head>
+	<title>Les évènements</title>
+	<meta charset="utf-8">
+</head>
+<body>
+	<input id="clic" type="button" value="Clic">
+	<script>
+		var maFonction = function() {
+			alert('click 1');
+		};
+		var element = document.getElementById('clic');
+
+		element.addEventListener('click', function(){
+			alert('click 2');
+		});
+		element.addEventListener('click', maFonction);
+	</script>
+</body>
+</html>

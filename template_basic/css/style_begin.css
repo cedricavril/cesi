@@ -1,0 +1,181 @@
+html,body {
+	margin: 0px;
+	padding: 0px;
+	border: none;
+	background-color: black;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+/* On utilise une marge négative pour centrer notre balise globale */
+section#global {
+	position: absolute;
+	width: 960px;
+	left: 50%;
+	margin-left: -480px;
+	margin-top: 10px;
+	background-color: #fff;
+}
+
+/* Comme on veut que le header occupe tout le global, il faut lui appliquer des marges réduites pour un meilleur espacement */
+/* Par exemple des marges de 10px en intérieur/extérieur droit et gauche soit 960 - 10 - 10 - 10 - 10 = 920px restant */
+/* On cale l'image de fond de 200px de haut, moins les marges intérieures de 20px soit 180px */
+header {
+	width: 920px;
+	height: 140px;
+	margin: 10px;
+	padding: 10px;
+	background-color: orange;
+}
+/* Image du titre du header avec les mêmes dimensions */
+	header h1 {
+		line-height: 140px;
+		text-align: center;
+		margin: 0px;
+		padding: 0px;
+		color: #fff;
+		text-transform: uppercase;
+		font-size: 2em;
+	}
+
+/* Le bloc navigation principale, même méthode */
+/* On applique les attributs de nav à ul */
+/* On affiche le nav et ses li à l'horizontal avec une séparation border-right */
+nav {
+	width: 920px;
+	margin-left: 10px;
+	margin-right: 10px;
+	padding: 10px;
+	background-color: orange;
+}
+nav ul {
+	width: 920px;
+	padding: 0px;
+	margin: 0px;
+	list-style: none;
+}
+nav ul li {
+	display: inline;
+	padding-left: 10px;
+	padding-right: 10px;
+	border-right: 1px solid #333;
+}
+
+/* On supprime le border-right du dernier enfant li */
+nav ul li:last-child {
+	border-right: none;
+}
+
+/* On personnalise les liens du menu */
+nav ul li a {
+	font-weight: bold;
+	text-decoration: none;
+	color: #333;
+}
+nav ul li a:hover {
+	color: #fff;
+}
+
+
+
+
+/* le bloc article à gauche du conteneur et sous le menu */
+/* Il faut utiliser un élément flottant en déduisant les marges de 10 et la taille du bloc droit */
+/* On stylise le titre h2 des articles */
+article {
+	float: left;
+	width: 620px;
+	margin: 10px;
+	padding: 10px;
+	background-color: #ccc;
+}
+article h2 {
+	padding: 0px;
+	margin: 0px;
+	padding-bottom: 10px;
+	font-size: 1.5em;
+	font-weight: bold;
+}
+
+/* Les paragraphes */
+article p {
+	padding: 0px;
+	margin: 0px;
+	padding-bottom: 10px;
+	font-size: 1em;
+	color: #000;
+	text-align: justify;
+}
+
+
+/* On fait "flotter" les images du bloc article pour que le texte épouse ses formes */
+article p:first-of-type img {
+	float: left;
+	padding-right: 10px;
+}
+/* Idem pour le dernier paragraphe */
+article p:last-of-type img {
+	float: right;
+	padding-left: 10px;
+}
+
+
+
+
+/* Idem pour le bloc droit */
+aside {
+	float: right;
+	width: 270px;
+	margin: 10px;
+	margin-left: 0px;
+	padding: 10px;
+	background-color: #ccc;
+}
+/* On retire 30px de marge par rapport à aside et on cale des marges identiques */
+aside ul {
+	width: 240px;
+	padding: 0px;
+	margin-top: 25px;
+	margin-left: 25px;
+	margin-bottom: 25px;
+	list-style: none;
+}
+/* Une ligne fait la taille d'une image */
+/* Pour afficher les éléments côte à côte on applique une taille et un espacement */
+aside ul li {
+	display: inline;
+	width: 100px;
+}
+aside ul li img {
+	float: left;
+	border: none;
+	margin-right: 20px;
+	margin-bottom: 30px;
+}
+
+/*aside p{
+	text-align: justify;
+	overflow: hidden;
+	clear: both;
+	padding: 10px;
+	font-weight: bold;
+}
+aside a {
+	text-decoration: none;
+}
+aside a:hover {
+	text-decoration: underline;
+}*/
+
+/* Pour bien positionner votre footer sous deux flottants, utilisez l'attribut clear: both */
+/* Même dimensions que le header, on change juste les styles */
+footer {
+	clear: both;
+	width: 920px;
+	margin: 10px;
+	padding: 10px;
+	color: #ccc;
+	background-color: #333;
+}
+footer p {
+	text-align: right;
+}

@@ -1,0 +1,37 @@
+/* L'attribut text-overflow détermine la manière dont un texte apparaît s'il déborde de sa boîte */
+/* Il peut être rogné (clipping), ellipsé ('...') ou inclure des caractères personnalisés */
+
+p {
+  width: 400px;
+  height: 90px;
+  margin: auto;
+  font-size: 16px;
+  border: 3px dotted red;
+  padding: 10px;
+  text-align: justify;
+  /* Nécessaires pour text-overflow */
+  white-space: wrap; /* retour à la ligne */
+  overflow: hidden; /* débord */
+}
+/*
+p.visible { 
+  white-space: initial;
+}
+*/
+p.clip {
+  text-overflow: clip;
+  text-overflow: ellipsis;
+  /* text-overflow: " [...]"; */
+}
+/* Utile: le word-wrap permet un retour à la ligne forcé en cas de dépassement */
+p.cesure { 
+  /* word-wrap: break-word; */
+  overflow-wrap: break-word;
+  hyphens: auto;
+}
+/* Variante avec l'attribut hyphens qui rajoute des traits d'union en cas de retour à la ligne */
+/* Encore peu reconnu */
+p {
+	hyphens: auto;
+	-webkit-hyphens: auto;
+}

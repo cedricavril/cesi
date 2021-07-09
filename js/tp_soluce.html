@@ -1,0 +1,63 @@
+<html>
+<head>
+<title>Capitales du monde</title>
+<meta charset="utf-8">
+<script>
+	function correction(question)
+	{
+		if(question[1].value == '3')
+		{
+			alert('Question 1:\n Bravo, c\'est bien Paris !!');
+		}		
+		else
+		{
+			alert('Question 1:\n Mais nooon, la capitale de la France c\'est Paris !!');
+		}
+		
+		if(question[2].value == '1')
+		{
+			alert('Question 2:\n Bravo, c\'est bien Tachkent, t\'es très fort en géo !!')
+		}
+		else
+		{
+			alert('Question 2:\n Mais nooon, la capitale de l\'Ouzbékistan c\'est Tachkent voyons !!');
+		}
+		
+		if(question[3].value == '2')
+		{
+			alert('Trop balèze !! C\'est bien Rome !!');
+		}
+		else
+		{
+			alert('Meuh nonnn !! La capitale de l\'Italie c\'est Rome enfin !!');
+		}
+	}
+</script>
+</head>
+
+<body>
+	<form>
+		<b>Question 1</b>
+			<p>Quelle est la capitale de la France ?</p>
+			<p><input type="radio" name="Choix1" onclick="this.form[1].value=1">Los Angeles</p>
+			<p><input type="radio" name="Choix1" onclick="this.form[1].value=2">Tokyo</p>
+			<p><input type="radio" name="Choix1" onclick="this.form[1].value=3">Paris</p>
+			<!-- Le .form représente le tableau du formulaire et le .value la valeur correspondante -->
+			<!-- Les tableaux se déclarent entre crochets -->
+			
+		<b>Question 2</b>
+			<p>Quelle est la capitale de l'Ouzbékistan ?</p>
+			<p><input type="radio" name="Choix2" onclick="this.form[2].value=1">Tachkent</p>
+			<p><input type="radio" name="Choix2" onclick="this.form[2].value=2">Bichkek</p>
+			<p><input type="radio" name="Choix2" onclick="this.form[2].value=3">Grozny</p>
+
+		<b>Question 3</b>
+			<p>Quelle est la capitale de l'Italie ?</p>
+			<p><input type="radio" name="Choix3" onclick="this.form[3].value=1">Moscou</p>
+			<p><input type="radio" name="Choix3" onclick="this.form[3].value=2">Rome</p>
+			<p><input type="radio" name="Choix3" onclick="this.form[3].value=3">Pékin</p>
+			
+			<p><input type="button" value="Solutions" onclick="correction(this.form)"></p>
+	</form>
+</body>
+</html>

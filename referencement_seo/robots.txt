@@ -1,0 +1,5 @@
+User-agent:*
+Disallow:
+
+<mettre l'adresse du robot sur le site ici>
+

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<head> 
+<meta http-equiv="Content-Type" content="text/html; charset=latin1" /> 
+<title>test</title>  
+<script> 
+	function choix_user()
+	{ 
+		var choix_region = document.getElementById('liste1').value;
+		var div_champ_input = document.getElementById('id_ecrire');			
+		  
+			if (choix_region == 'iledefrance')
+			{ 
+				div_champ_input.innerHTML = '<select> <option value="haut-de-seine"> Haut-de-Seine </option> <option> Val-de-Marne </option> <option> Essone </option> </select>'; 
+			}
+				   
+			else if (choix_region == 'aquitaine')
+			{ 
+				div_champ_input.innerHTML = '<select> <option value="gironde"> Gironde </option> <option> Landes </option> <option> Lot </option> </select>'; 
+			} 
+			
+			else if (choix_region == 'paca')
+			{ 
+				div_champ_input.innerHTML = '<select> <option value="bouche-du-rhone"> Bouches-du-Rhône </option> <option> Alpes Maritimes </option> <option> Monaco </option> </select>'; 
+			}  
+	}
+</script> 
+</head> 
+
+
+<body> 
+<form> 
+  <table width="100%" height="228" border="0" cellpadding="0" cellspacing="10" bgcolor="#C00"> 
+     
+    <tr> 
+		<td width="109" height="150">
+			<div align="right"> Votre région </div>
+		</td> 
+		
+		<td width="200">
+			<label> 
+				<select id="liste1" onchange="choix_user();"> 
+					<option selected="selected"> Choisissez dans la liste </option> 
+					<option value="aquitaine"> Aquitaine </option> 
+					<option value="iledefrance"> Île-de-France </option>
+					<option value="paca"> PACA </option>				  
+				</select> 
+			</label>
+		</td>
+
+		<td width="174" colspan="2">  
+			<table width="204" height="91" border="0" cellspacing="2" id="id_ecrire"> 
+				<p> Résultats </p> 
+            </table>
+        </td>
+ 
+  </table> 
+  
+  <input type="submit" value="rechercher"></input>
+  
+</form> 
+</body> 
+</html>
